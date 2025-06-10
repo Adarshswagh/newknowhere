@@ -1035,6 +1035,74 @@ include("config.php");
 }
 
 
+
+/* Gallery Section */
+.gallery-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+    margin-top: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    animation: slideGallery 15s linear infinite;
+}
+
+.gallery-item {
+    flex-shrink: 0;
+    width: 350px; /* Adjust width as needed */
+    height: 100%;
+    margin-right: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 10px; */
+}
+
+.gallery-section h3{
+    color: #A8894D;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.gallery-section h2{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.gallery-section{
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* Animation for Sliding */
+@keyframes slideGallery {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Duplicate the images for infinite sliding */
+.gallery-container:after {
+    content: '';
+    display: flex;
+}
+
+.gallery-slider:hover .gallery-container {
+    animation-play-state: paused;
+}
+
 </style>
 
 
@@ -1904,6 +1972,46 @@ include("config.php");
 
 
 
+
+<!-- gallery -->
+<section class="gallery-section section-hidden" style = "margin-top:70px">
+<h3>Our Clients</h3>
+<!-- <h2>Don't just take our word for it</h2> -->
+    <div class="gallery-slider">
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="./images/test/C1.png" alt="Gallery Image 1" data-index="0">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C2.png" alt="Gallery Image 2" data-index="1">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C3.png" alt="Gallery Image 3" data-index="2">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C4.png" alt="Gallery Image 4" data-index="3">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C5.png" alt="Gallery Image 5" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C6.png" alt="Gallery Image 5" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C7.png" alt="Gallery Image 5" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C8.png" alt="Gallery Image 5" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C9.png" alt="Gallery Image 5" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="./images/test/C10.png" alt="Gallery Image 5" data-index="4">
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- end property cad acrousel -->
 
