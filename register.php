@@ -1,228 +1,167 @@
-<?php 
-include("config.php");
-$error="";
-$msg="";
-if(isset($_REQUEST['reg']))
-{
-	$name=$_REQUEST['name'];
-	$email=$_REQUEST['email'];
-	$phone=$_REQUEST['phone'];
-	$pass=$_REQUEST['pass'];
-	$utype=$_REQUEST['utype'];
-	
-	$uimage=$_FILES['uimage']['name'];
-	$temp_name1 = $_FILES['uimage']['tmp_name'];
-	$pass= sha1($pass);
-	
-	$query = "SELECT * FROM user where uemail='$email'";
-	$res=mysqli_query($con, $query);
-	$num=mysqli_num_rows($res);
-	
-	if($num == 1)
-	{
-		$error = "<p class='alert alert-warning'>Email Id already Exist</p> ";
-	}
-	else
-	{
-		
-		if(!empty($name) && !empty($email) && !empty($phone) && !empty($pass) && !empty($uimage))
-		{
-			
-			$sql="INSERT INTO user (uname,uemail,uphone,upass,utype,uimage) VALUES ('$name','$email','$phone','$pass','$utype','$uimage')";
-			$result=mysqli_query($con, $sql);
-			move_uploaded_file($temp_name1,"admin/user/$uimage");
-			   if($result){
-				   $msg = "<p class='alert alert-success'>Register Successfully</p> ";
-			   }
-			   else{
-				   $error = "<p class='alert alert-warning'>Register Not Successfully</p> ";
-			   }
-		}else{
-			$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
-		}
-	}
-	
+<?php
+require_once 'config.php';
+require_once 'include/auth.php';
+
+if (isLoggedIn()) {
+    header("Location: profile.php");
+    exit();
+}
+
+$error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    
+    $check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
+    if (mysqli_num_rows($check) > 0) {
+        $error = "Email already exists. <a href='login.php'>Login here</a>";
+    } else {
+        $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+        if (mysqli_query($con, $query)) {
+            $_SESSION['user_id'] = mysqli_insert_id($con);
+            $_SESSION['user_name'] = $name;
+            $_SESSION['user_email'] = $email;
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "Registration failed. Please try again.";
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- FOR MORE PROJECTS visit:  .com -->
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
-
-<!--	Fonts
-	========================================================-->
-<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
-<!--	Css Link
-	========================================================-->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/layerslider.css">
-<link rel="stylesheet" type="text/css" href="css/color.css">
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
-
-<!--	Title
-	=========================================================-->
-<title>Real Estate PHP</title>
+    <meta charset="UTF-8">
+    <title>Register | Real Nest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left-panel {
+            width: 50%;
+            background: url('property.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .left-panel .branding {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .left-panel .text {
+            margin-bottom: 30px;
+        }
+        .text h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .text p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .right-panel {
+            width: 50%;
+            padding: 80px 60px;
+            background: #fff;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-panel h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .right-panel form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .right-panel input {
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .right-panel button {
+            background: #2a6df4;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .right-panel .register-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-panel, .right-panel {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
-<div id="page-wrapper">
-    <div class="row"> 
-        <!--	Header start  -->
-		<?php include("include/header.php");?>
-        <!--	Header end  --><!-- FOR MORE PROJECTS visit:  .com -->
-        
-        <!--	Banner   --->
-        <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Register</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Register</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
-		 
-		 
-		 
-        <div class="page-wrappers login-body full-row bg-gray">
-            <div class="login-wrapper">
-            	<div class="container">
-                	<div class="loginbox">
-                        <div class="login-right">
-							<div class="login-right-wrap">
-								<h1>Register</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
-								<?php echo $error; ?><?php echo $msg; ?>
-								<!-- Form -->
-								<form method="post" enctype="multipart/form-data">
-									<div class="form-group">
-										<input type="text"  name="name" class="form-control" placeholder="Your Name*">
-									</div>
-									<div class="form-group">
-										<input type="email"  name="email" class="form-control" placeholder="Your Email*">
-									</div>
-									<div class="form-group">
-										<input type="text"  name="phone" class="form-control" placeholder="Your Phone*" maxlength="10">
-									</div>
-									<div class="form-group">
-										<input type="password" name="pass"  class="form-control" placeholder="Your Password*">
-									</div>
-
-									 <div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="user" checked>User
-									  </label>
-									</div><!-- FOR MORE PROJECTS visit:  .com -->
-									<div class="form-check-inline">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="agent">Agent
-									  </label>
-									</div>
-									<div class="form-check-inline disabled">
-									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="builder">Builder
-									  </label>
-									</div> 
-									
-									<div class="form-group">
-										<label class="col-form-label"><b>User Image</b></label>
-										<input class="form-control" name="uimage" type="file">
-									</div>
-									
-									<button class="btn btn-success" name="reg" value="Register" type="submit">Register</button>
-									
-								</form>
-								
-								<div class="login-or">
-									<span class="or-line"></span>
-									<span class="span-or">or</span>
-								</div>
-								
-								<!-- Social Login -->
-								<!-- <div class="social-login">
-									<span>Register with</span>
-									<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="google"><i class="fab fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fab fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
-								</div> -->
-								<!-- /Social Login -->
-								
-								<div class="text-center dont-have">Already have an account? <a href="login.php">Login</a></div>
-								
-							</div><!-- FOR MORE PROJECTS visit:  .com -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+    <div class="left-panel">
+        <div class="branding">
+            <div style="background:#ffffff33; padding:8px 16px; border-radius:20px;">Real Nest</div>
         </div>
-	<!--	login  -->
-        
-        
-        <!--	Footer   start-->
-		<?php include("include/footer.php");?>
-		<!--	Footer   start-->
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
+        <div class="text">
+            <h2>Manage Properties Efficiently</h2>
+            <p>Easily track rent payments, maintenance requests, and tenant communications in one place. Say goodbye to the hassle of manual management.</p>
+        </div>
+    </div>
+    <div class="right-panel">
+        <h2>Create Your Account</h2>
+        <p>Sign up to get started with Real Nest</p>
+        <?php if ($error): ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="register-link">
+            Already have an account? <a href="login.php">Login here</a>
+        </div>
     </div>
 </div>
-<!-- Wrapper End --> 
-<!-- FOR MORE PROJECTS visit:  .com -->
-<!--	Js Link
-============================================================--> 
-<script src="js/jquery.min.js"></script> 
-<!--jQuery Layer Slider --> 
-<script src="js/greensock.js"></script> 
-<script src="js/layerslider.transitions.js"></script> 
-<script src="js/layerslider.kreaturamedia.jquery.js"></script> 
-<!--jQuery Layer Slider --> 
-<script src="js/popper.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/owl.carousel.min.js"></script> 
-<script src="js/tmpl.js"></script> 
-<script src="js/jquery.dependClass-0.1.js"></script> 
-<script src="js/draggable-0.1.js"></script> 
-<script src="js/jquery.slider.js"></script> 
-<script src="js/wow.js"></script> 
-<script src="js/custom.js"></script>
 </body>
 </html>

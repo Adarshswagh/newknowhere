@@ -1,280 +1,16 @@
-<!DOCTYPE html>
+<?php 
+// Add this at the VERY TOP of your header.php file
+require_once __DIR__ . '/auth.php';
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-    <style>
-        /* General body styles */
-        body {
-            margin: 0;
-            font-family: 'Lexend', sans-serif;
-            background-color: #050F17;
-            padding-top: 80px; /* To compensate for sticky header */
-        }
-
-        /* Sticky Header */
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background-color: #050F17;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Navbar container */
-        .navbar {
-            background-color: #050F17;
-            height: 80px;
-            width: 100%;
-        }
-
-        .navbar-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1450px;
-            margin: 0 auto;
-            width: 100%;
-            height: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        
-        /* Logo styling */
-        .navbar-logo img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        /* Navbar menu */
-        .navbar-menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 0px;
-            align-items: center;
-        }
-
-        .navbar-menu li {
-            position: relative;
-        }
-
-        /* Navbar links */
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 10px 20px;
-            display: block;
-        }
-
-        .navbar-menu a:hover {
-            color: #A8894D;
-        }
-
-        /* Dropdown menu */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #050F17;
-            padding: 10px 0;
-            list-style: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            z-index: 10;
-            min-width: 200px;
-        }
-
-        .dropdown-menu li {
-            padding: 0;
-        }
-
-        .dropdown-menu-a {
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-            white-space: nowrap;
-        }
-
-        .dropdown-menu-a:hover {
-            color: #A8894D;
-            background-color: rgba(168, 137, 77, 0.1);
-        }
-
-        /* Sub-Dropdown Menu */
-        .sub-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: #050F17;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            z-index: 11;
-            min-width: 200px;
-        }
-
-        /* Dropdown arrows */
-        .dropdown-arrow {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-left: 5px;
-            vertical-align: middle;
-            border-top: 5px solid;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .dropdown.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Compare button */
-        .navbar-compare {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 25px;
-            background-color: #A8894D;
-            color: #050F17;
-            border-radius: 4px;
-        }
-
-        .navbar-compare:hover {
-            background-color: white;
-        }
-
-        /* Mobile toggle button */
-        .navbar-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            transition: all 0.3s;
-        }
-
-        /* Active state for toggle button */
-        .navbar-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-
-        .navbar-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .navbar-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            .navbar {
-                height: 70px;
-            }
-
-            .navbar-logo img {
-                max-width: 120px;
-            }
-
-            .navbar-menu a {
-                padding: 10px 15px;
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-toggle {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .navbar-menu-container {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: #050F17;
-                padding: 20px;
-                box-sizing: border-box;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-                height: calc(100vh - 70px);
-                overflow-y: auto;
-            }
-
-            .navbar-menu-container.show {
-                transform: translateX(0);
-            }
-
-            .navbar-menu {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                margin-top: 10px;
-                margin-left: 20px;
-                padding: 0;
-            }
-
-            .sub-dropdown-menu {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                margin-top: 10px;
-                margin-left: 20px;
-                padding: 0;
-            }
-
-            .dropdown-menu.show,
-            .sub-dropdown-menu.show {
-                display: block;
-            }
-
-            .dropdown-arrow {
-                float: right;
-                margin-top: 8px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/headercss.css">
+    
 </head>
 
 <body>
@@ -353,6 +89,18 @@
                     <li><a href="Emicalculator.php">EMI Calculator</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="compare.php" class="navbar-compare">COMPARE</a></li>
+
+                    <li class="dropdown">
+                        <?php if (isLoggedIn()): ?>
+                            <a href="#"><?php echo $_SESSION['user_name']; ?> <span class="dropdown-arrow"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-menu-a" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-menu-a" href="logout.php">Logout</a></li>
+                            </ul>
+                        <?php else: ?>
+                            <a href="login.php">Login</a>
+                        <?php endif; ?>
+                    </li>
                 </ul>
             </div>
         </div>
