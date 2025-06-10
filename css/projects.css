@@ -1,0 +1,659 @@
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #050f17; /* Adjust background color to your preference */
+    /* padding: 15px 20px; */
+    height: 120px;
+    /* width: 100px; */
+    max-width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    height: 120px;
+}
+
+/* Logo Styling */
+.navbar-logo img {
+    max-width: 190px; /* Adjust logo size */
+    height: auto;
+}
+
+/* Navbar menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spacing between menu items */
+    align-items: center;
+    margin: 0;
+    flex-grow: 1; /* Take up available space */
+    justify-content: flex-end;
+    padding-right: 50px;
+    font-size: 12px; /* Font size for all menu items */
+    font-family: 'Lexend', sans-serif; /* Lexend font for the menu */
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 500;
+    font-family: 'Lexend', sans-serif; /* Lexend font for links */  
+}
+
+.navbar-menu a:hover {
+    color: #A8894d; /* Gold color on hover */
+}
+
+.navbar-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    left: 0;
+}
+
+.navbar-menu li:hover .dropdown-menu {
+    display: block;
+}
+
+/* Button styling */
+
+
+
+
+.navbar-investor a{
+    font-family: "Lexend", Sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #050F17;
+    background-color: #A8894D;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    padding: 17px 35px 17px 35px;
+    text-decoration: none;
+}
+
+.navbar-investor a:hover{
+    background-color: #fff; /* Gold button */
+    color: #050f17;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a1a1a;
+        margin-top: 10px;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+/* end navbar */
+
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #050f17;
+
+}
+
+.banner {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/logo/newbanner.png');
+    opacity: 0.8;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay for better text visibility */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Content inside the banner */
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+
+
+/* Heading styling */
+.banner h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+    text-align: center;
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #e8e8e8; /* Gold color for links */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px; /* Further reduction for very small screens */
+    }
+
+    .banner p {
+        font-size: 12px; /* Breadcrumb font size */
+    }
+}
+
+/* end banner */
+
+/* properties */
+.properties-header {
+    background-color: #050f17; /* Dark background color */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    padding: 50px 20px; /* Vertical and horizontal padding */
+}
+
+.properties-div {
+    max-width: 645px; /* Maximum width for the div */
+    margin: 0 auto; /* Center the div horizontally */
+}
+
+.properties-header h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", sans-serif; /* Corrected font-family syntax */
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+.properties-header p {
+    font-family: 'Lexend', sans-serif; /* Font used */
+    font-size: 14px; /* Adjust font size as needed */
+    margin: 0px 0px 14.4px; /* Space above the paragraph */
+}
+
+#properties{
+    padding-top: 50px;
+    background-color: #050f17;
+    
+    }
+
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1450px;
+}
+
+/* Left Section for Property Cards */
+.left-section {
+    width: 65%;
+}
+
+/* Property Card */
+.property-card {
+    background-color: #f4f4f4;
+    /* border-radius: 10px; */
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 420px;
+}
+
+.property-card:hover {
+    transform: scale(1.02);
+}
+
+.property-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Promo Badge */
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #050f17;
+    color: #fff;
+    padding: 15px 32px;
+    font-size: 12px;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+    /* border-radius: 5px; */
+}
+
+/* Property Info */
+.property-info {
+    padding: 20px;
+    background-color: #f2ddc4;
+}
+
+.property-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+    font-family: "Italiana", Sans-serif;
+}
+
+.price {
+    
+
+    color: #A8894D;
+    font-family: 'Lexend', Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+.property-details {
+    font-size: 14px;
+    font-family: 'Lexend', Sans-serif;
+    color: #050f17;
+    margin-bottom: 15px;
+}
+
+.property-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lexend', Sans-serif;
+    font-size: 14px;
+    color: #050f17;
+    margin-bottom: 25px;
+}
+
+.view-more-btn {
+    font-family: "Lexend", Sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #e8e8e8;
+    background-color: #050f17;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    padding: 10px 70px 10px 70px;
+    
+}
+
+.view-more-btn:hover {
+    background-color: #A8894D;
+    color: #fff;
+    text-decoration: none
+}
+
+/* Right Section for Sticky Calculator */
+.right-section {
+    width: 30%;
+}
+
+.sticky {
+    position: sticky;
+    top: 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticky h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sticky label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.sticky input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.sticky button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d63031;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sticky button:hover {
+    background-color: #e74c3c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+}
+/* end properties */
+
+/* call to action */
+
+#main-call{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #050f17;
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.call-to-action {
+    /* background-color: #050f17; */
+    position: relative;
+    background-image: url('../images/bannerf.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 700px;
+}
+
+.hero-section {
+    
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.overlay {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* border-radius: 10px; */
+}
+
+h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+p {
+    text-align: left;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+.btn {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 30px;
+    /* text-decoration: none; */
+    font-size: 15px;
+    /* font-weight: bold; */
+    font-family: 'Lexend'sans-serif;
+    border-radius: 0px;
+
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+/* end call to action */
+
+/* footer */
+
+footer {
+    background-color: #050f17;
+    /* padding: 50px 0; */
+    color: #fff;
+    border-top: 1px solid #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.footer-logo img {
+    width: 250px; /* Reduce the width for a smaller logo */
+    height: auto; /* Ensure the aspect ratio is maintained */
+    margin-bottom: -76px;
+    margin-top: -100px;
+    margin-left: -5px;
+}
+
+.footer-logo h2 {
+    font-family: 'Serif';
+    color: #b59147;  /* Gold color for the logo text */
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-align: left;
+    max-width: 200px;
+    margin-left: 6px;
+}
+.social-icons{
+    padding-left: 5px;
+}
+
+.social-icons a {
+    margin-right: 30px;
+    color: #b59147;  /* Gold color for social icons */
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #a3813d;  /* Darker gold on hover */
+}
+
+.footer-contact h3, .footer-links h3, .footer-location h3 {
+    font-family: "Italiana", Sans-serif;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.footer-contact ul, .footer-links ul {
+    list-style: none;
+    margin-left: -35px; 
+    font-family: "Lexend", Sans-serif;
+}
+
+.footer-contact i{
+    color: #000;
+}
+
+.footer-contact ul li {
+    margin-bottom: 20px;
+    font-family: "Lexend", Sans-serif;
+    font-size: 14px;
+}
+
+.footer-links ul li{
+    margin-bottom: 15px;
+    font-family: "Lexend", Sans-serif;
+    font-size: 14px;
+}
+
+.footer-contact ul li i, .footer-links ul li a {
+    margin-right: 10px;
+    color: #b59147;  /* Gold color for the icons */
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #b59147;  /* Gold color on hover */
+}
+
+.footer-location iframe {
+    border: none;
+    /* border-radius: 5px; */
+}
+
+.footer-bottom {
+    display: flex !important;  /* Use flexbox */ 
+    justify-content: space-between !important;  /* Align items to opposite ends */
+    align-items: center !important;  /* Vertically center the items */
+    padding: 20px !important;
+    border-top: 1px solid #333 !important;
+    padding-left: 180px !important;
+    padding-right: 135px !important;
+}
+
+.footer-bottom-left p {
+    color: #fff;
+    margin: 0;  /* Remove any default margins */
+}
+
+.footer-bottom-right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+}
+
+.footer-bottom-right ul li {
+    margin: 0 15px;
+}
+
+.footer-bottom-right ul li a {
+    color: #b59147;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-bottom-right ul li a:hover {
+    color: #a3813d;
+}
+
+/* end footer */

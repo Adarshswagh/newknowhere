@@ -1,0 +1,609 @@
+/* General body styles */
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #050F17;
+}
+
+/* banner */
+/* Banner styling */
+#banner-main {
+    padding: 0 20px;
+    background-color: #050f17;
+}
+
+.banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.73);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.banner h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 10px;
+}
+
+.banner p a {
+    color: #e8e8e8;
+    text-decoration: none;
+}
+
+.banner p a:hover {
+    text-decoration: underline;
+    color: #A8894D;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .banner {
+        height: 320px;
+    }
+    .banner h2 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner {
+        height: 260px;
+    }
+    .banner h2 {
+        font-size: 32px;
+    }
+    .banner p {
+        font-size: 13px;
+    }
+}
+
+/* end banner */
+
+/* properties */
+   /* Section Container */
+/* Pune Properties Section */
+#pune-properties {
+    padding-top: 50px;
+    background-color: #050f17;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Container */
+.pune-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+/* Row */
+.pune-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Property Card */
+.pune-property-card {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 350px;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.pune-property-card:hover {
+    transform: scale(1.02);
+}
+
+.pune-property-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Promo Badge */
+.pune-promo-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #050f17;
+    color: #ffffff;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 4px;
+}
+
+/* Property Info */
+.pune-property-info {
+    padding: 20px;
+    background-color: #f2ddc4;
+}
+
+/* Property Title */
+.pune-property-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+    font-family: "Italiana", Sans-serif;
+    word-break: break-word;
+}
+
+.pune-property-title:hover {
+    text-decoration: none;
+    color: #A8894D;
+    font-weight: 800;
+}
+
+/* Property Meta */
+.pune-property-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    color: #050f17;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Card Location */
+.pune-card-location {
+    font-size: 16px;
+    font-weight: 400;
+    color: #866a35;
+}
+
+/* Button Container */
+.pune-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* View More Button */
+.pune-view-more-btn {
+    font-family: "Lexend", Sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #050f17;
+    padding: 12px 40px;
+    border-radius: 4px;
+}
+
+.pune-view-more-btn:hover {
+    background-color: #A8894D;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background-color: #25d366;
+    border-radius: 4px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    color: #fff;
+}
+
+/* Call Button */
+.call-btn {
+    background-color: #4285f4;
+    border-radius: 4px;
+}
+
+.call-btn:hover {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+/* Icon Button */
+.btn-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* Responsive Design */
+
+/* For Tablets */
+@media (max-width: 1024px) {
+    .pune-property-card img {
+        height: 250px;
+    }
+}
+
+/* For Mobile */
+@media (max-width: 768px) {
+    .pune-row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+    }
+
+    .pune-property-card {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        margin-right: 15px;
+        width: 300px;
+    }
+
+    .pune-property-card img {
+        height: 220px;
+    }
+
+    .pune-property-title {
+        font-size: 24px;
+    }
+
+    .pune-property-meta {
+        font-size: 14px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .pune-button-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* For Smallest Devices */
+@media (max-width: 480px) {
+    .pune-property-card {
+        width: 280px;
+    }
+
+    .pune-property-card img {
+        height: 180px;
+    }
+
+    .pune-property-title {
+        font-size: 20px;
+    }
+
+    .pune-property-meta {
+        font-size: 13px;
+    }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+    
+/* end properties */
+
+/* call to action */
+
+/* Main CTA Section */
+#cta-main {
+    padding: 120px 30px 80px;
+    background-color: #050f17;
+    width: 100%;
+}
+
+/* Background */
+.cta-background {
+    background-image: url('../images/bannerf.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    max-height: 700px;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.cta-hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+/* Overlay */
+.cta-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* added transparency */
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Title */
+.cta-title {
+    color: #E8E8E8;
+    font-family: "Italiana", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+.cta-subtitle {
+    color: #e8e8e8;
+    font-size: 16px;
+    font-family: "Lexend", sans-serif;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Button */
+.cta-button {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #050f17;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .cta-title {
+        font-size: 42px;
+    }
+    .cta-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .cta-hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+    .cta-title {
+        font-size: 32px;
+    }
+    .cta-subtitle {
+        font-size: 14px;
+    }
+    .cta-overlay {
+        padding: 30px 20px;
+        border-radius: 8px;
+    }
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 28px;
+    }
+    .cta-subtitle {
+        font-size: 13px;
+    }
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+/* end call to action */
+
+
+
+
+
+
+/* enquire button */
+
+
+/* Modal and form container styling */
+#enquiryModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#enquiryModal .form-container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    background: #5c5c5c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#enquiryModal h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    /* Centering the h3 */
+}
+
+/* Input fields styling with black placeholder */
+#enquiryForm input[type="text"],
+#enquiryForm input[type="email"],
+#enquiryForm input[type="tel"],
+#enquiryForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder color styling */
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #000000;
+    /* Black placeholder text */
+    opacity: 1;
+    /* Ensures placeholder is fully opaque */
+}
+
+/* Focus effect on input fields */
+#enquiryForm input[type="text"]:focus,
+#enquiryForm input[type="email"]:focus,
+#enquiryForm input[type="tel"]:focus,
+#enquiryForm textarea:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Submit and close buttons styling */
+#enquiryForm button[type="submit"],
+#enquiryForm button#closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enquiryForm button[type="submit"] {
+    background-color: #A8894D;
+    color: #ffffff;
+    width: 100%;
+}
+
+#enquiryForm button[type="submit"]:hover {
+    background-color: #050F17;
+}
+
+#enquiryForm button#closeModal {
+    color: #333;
+    margin-left: 10px;
+}
+
+#enquiryForm button#closeModal:hover {
+    background-color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+/* button */
+/* Container for the button */
+#enquireButtonContainer {
+    position: fixed;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 999;
+}
+
+/* Button styling */
+#enquireButton {
+    padding: 10px 20px;
+    background-color: #A8894d;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    z-index: 99px;
+    /* Smooth transition for background color */
+}
+
+/* Hover effect */
+#enquireButton:hover {
+    background-color: #f5f5f5;
+    /* Darker shade of the original color */
+}
+
+/* end enquire */
+

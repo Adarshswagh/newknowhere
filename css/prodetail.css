@@ -1,0 +1,901 @@
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+    background-color: #050F17;
+}
+
+
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #000000;
+
+}
+
+.banner {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/logo/newbanner.png');
+    opacity: 0.8;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay for better text visibility */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 73%);    /* Dark overlay */
+    z-index: 1;
+}
+
+/* Content inside the banner */
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+
+
+/* Heading styling */
+.banner h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+    text-align: center;
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #e8e8e8; /* Gold color for links */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px; /* Further reduction for very small screens */
+    }
+
+    .banner p {
+        font-size: 12px; /* Breadcrumb font size */
+    }
+}
+
+/* end banner */
+
+
+/* property detail */
+
+
+
+.form-container {
+    flex: 1;
+    padding: 40px;
+    border: 1px solid #6c6c6c;
+    max-width: 550px;
+    position: sticky;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px; /* Adjust the gap between first and last name fields */
+    margin-bottom: 20px;
+    
+}
+
+.email-group{
+    margin-bottom: 20px;
+}
+
+.form-heading {
+    color: #e8e8e8;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center; /* This centers the text */
+}
+
+
+.input-group input {
+    width: 97%; /* Make both input fields take up equal space */
+    font-size: 14px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #fff;
+}
+
+textarea {
+    height: 120px; /* Adjust the height of the message box */
+    resize: vertical; /* Make the textarea resizable */
+}
+
+button {
+    padding: 15px 30px; /* Increase the padding for a larger button */
+    background-color: #a38755;
+    color: #050F17;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust margin for space between form elements */
+    font-family: 'Lexend', sans-serif;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+
+#prodetail{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-content {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.right-form {
+    flex: 1;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+}
+
+.property-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.featured {
+    background-color: #d3a14f;
+    color: white;
+}
+
+.for-sale {
+    background-color: #fff;
+    color: #1c1c1c;
+}
+
+.prodetail-heading {
+    font-size: 48px;
+    margin: 10px 0;
+    font-family: 'Italiana', sans-serif;
+    color: #E8E8E8;
+    margin-top: 20px;
+}
+
+.location {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.price-info h2 {
+    color: #ff0000;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.price-info .discount {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 24px;
+}
+
+.prodetail-heading3 {
+    border-left: 2px solid #A8894D;
+    padding-left: 1.3rem;
+    margin-bottom: 2rem;
+    color: #A8894D;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 30px;
+    
+}
+
+.description {
+    text-align: left;
+    margin-left: 24px;
+    color: #e8e8e8;
+    font-size: 18px;
+    font-family: "Lexend", Sans-serif;
+    /* max-width: 700px; */
+}
+.property-details {
+    display: flex;
+    align-items: center; /* Align icons and text on the same vertical line */
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center; /* Align icon and text horizontally */
+    gap: 10px; /* Space between icon and text */
+}
+
+.detail-item1 p{
+    font-size: 10px;
+}
+
+.detail-item p {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.divider {
+    width: 1px;
+    height: 35px; /* Adjust to match the icon height */
+    background-color: #a8894d; /* Same color as icons */
+}
+
+
+.right-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #999;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #d3a14f;
+    border: none;
+    /* border-radius: 5px; */
+    font-size: 16px;
+    color: #050F17;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #e8e8e8;
+    
+}
+
+
+
+.property-details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+    /* margin: 20px; */
+}
+
+.properties-details, .unit-details {
+    width: 100%; /* Make sure both sections take full width */
+    margin-bottom: 30px; /* Add spacing between sections */
+}
+
+.properties-details h3, .unit-details h3 {
+    border-left: 2px solid #A8894D;
+    padding-left: 1.3rem;
+    margin-bottom: 2rem;
+    color: #A8894D;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 30px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for details */
+    gap: 30px;
+    /* width: 20px; */
+    margin-left: 70px;
+}
+
+.detail-grid div {
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 1px solid #555; /* Similar to the original style */
+    padding: 10px 0;
+    /* width: 350px; */
+}
+
+.field-title{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 2;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    color: #fff;
+}
+
+table th {
+    background-color: #333;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #2b2b2b;
+}
+
+table tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+table tr:hover {
+    background-color: #a8894d;
+}
+
+
+/* Properties Amenities Section */
+.amenities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+}
+
+.amenities-heading {
+    border-left: 2px solid #A8894D;
+    padding-left: 1.3rem;
+    margin-bottom: 2rem;
+    color: #A8894D;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 30px;
+}
+
+.amenities-list-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+}
+
+.amenities-column {
+    list-style: none;
+    padding: 0;
+}
+
+.amenities-column li {
+    margin: 10px 0;
+    color: #e8e8e8;
+}
+
+.amenities-icon {
+    color: #d4af37;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Location & Google Maps Section */
+.location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+}
+
+.location-heading {
+    border-left: 2px solid #A8894D;
+    padding-left: 1.3rem;
+    margin-bottom: 2rem;
+    color: #A8894D;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 30px;
+}
+
+.location-button {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.location-button:hover {
+    background-color: #c6a33a;
+}
+
+.map-wrapper {
+    width: 100%;
+    /* max-width: 600px; */
+}
+
+.google-map {
+    border-radius: 5px;
+    width: 100%;
+    height: 300px;
+}
+
+.prodetail-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.icon-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Text color */
+    border: 1px solid #ddd; /* Border for button */
+    border-radius: 20px; /* Rounded corners */
+    padding: 7px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 0px;
+}
+
+.icon-btn1 i {
+    margin-right: 5px; /* Spacing for the icon */
+}
+
+.icon-btn1:hover {
+    background-color: #a8894d; /* Hover effect */
+    color: #fff;
+}
+
+.icon-btn1:active {
+    background-color: #5a4b31; /* Active button feel */
+}
+
+
+/* end property detial */
+
+/* floor plan */
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.floor-plan {
+    position: relative;
+    width: 250px;
+    text-align: center;
+}
+
+.floor-plan img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: blur(1px); /* Apply blur effect */
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.download-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.download-btn:hover{
+    color: #A8894D;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px !important;
+}
+
+/* Enquiry Form Styles */
+.enquiry-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.form-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+input, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* end floor [plan */
+
+
+
+
+/* Similar Projects Section */
+@media only screen and (max-width: 1024px) {
+    .card-entry {
+        width: 300px;
+    }
+
+    .property-title a {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .location {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .similar-projects-carousel {
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+
+    .project-card {
+        width: 80%;
+        margin-right: 10px;
+    }
+
+    .card-entry {
+        width: 90%;
+        margin: 1em auto;
+    }
+
+    .property-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .view-more-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn-icon {
+        width: 100%;
+        height: 45px;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .project-card {
+        width: 90%;
+    }
+
+    .card-entry {
+        width: 95%;
+    }
+
+    .property-title a {
+        font-size: 20px;
+    }
+
+    .price, .location {
+        font-size: 15px;
+    }
+
+    .property-meta {
+        font-size: 13px;
+        flex-direction: column;
+    }
+
+    .view-more-btn,
+    .btn-icon {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Popup Styling */
+
+#popupOverlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 107%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#popupContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #050F17;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 80% !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    overflow-y: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+#closePopup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#contactform {
+    flex: 1;
+    padding: 40px;
+    border: 1px solid #6c6c6c;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+#closePopup:hover,
+#closePopup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input, textarea {
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 10px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #fff !important;
+    color: #fff !important;
+    font-family: 'Lexend', sans-serif !important;
+    font-size: 14px !important;
+}
+
+textarea {
+    height: 80px !important; /* Reduce default height */
+    resize: vertical !important; /* Allow resizing if needed */
+    margin: 5px 0 !important; /* Reduce vertical margin */
+    padding: 8px !important; /* Slightly tighter padding */
+    font-size: 13px !important;
+}
+
+
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #fff !important;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #A8894D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.popup-form {
+    color: #a8894d;
+    text-align: center;
+}
+
+.popup-form-p {
+    color: #f1f1f1;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #popupContent {
+        width: 90%;
+        height: 90% !important;
+        padding: 15px;
+    }
+
+    #contactform {
+        padding: 20px;
+    }
+
+    input, textarea {
+        font-size: 13px !important;
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    #closePopup {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    #popupContent {
+        width: 95%;
+        height: 95% !important;
+        padding: 10px;
+    }
+
+    #contactform {
+        padding: 15px;
+    }
+
+    input, textarea {
+        font-size: 12px !important;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}

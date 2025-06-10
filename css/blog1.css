@@ -1,0 +1,268 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f4f4f4; */
+}
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+/* Flexbox for blog content and sidebar */
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for better mobile layout */
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* Blog list section takes more space */
+.blog-list {
+    flex: 2;
+    width: 100%; /* Default to 100% width on small devices */
+}
+
+/* Sidebar section */
+.right-sidebar {
+    flex: 1;
+    width: 100%; /* Default to 100% width on small devices */
+    position: relative;
+}
+
+/* Sticky box for the sidebar */
+.sticky-box {
+    /* background: #fff; */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 100px; /* Stick the sidebar 100px from the top */
+}
+
+/* Blog main content styling */
+.main-content {
+    max-width: 800px;
+    background-color: #050f17;
+    border-radius: 8px;
+    color: #333;
+}
+
+.main-content h1 {
+    color: #A8894D;
+    font-family: "Italiana", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+.post-info {
+    font-size: 16px;
+    color: #c4c4c4;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.main-content img{
+    max-width: 100%;
+    border:  1px solid #fff;
+}
+
+/* Text content styling */
+.main-p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #c4c4c4;
+    margin-bottom: 20px;
+    font-family: "Lexend", Sans-serif;   
+    margin-top: 60px; 
+    text-align: justify;
+
+}
+
+.main-p2{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #c4c4c4;
+    margin-bottom: 20px;
+    font-family: "Lexend", Sans-serif;  
+    text-align: justify; 
+    
+
+}
+
+/* Ordered list styling */
+ol {
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    font-weight: 200;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #d9bc84;
+    line-height: 1.8em;
+    font-size: 25px;
+    
+}
+
+.blog-heading {
+    color: #d9bc84; /* Set heading color to pure white */
+    font-family: "Lexend", Sans-serif;    
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 1.3em;
+    margin-top: 10px;
+}
+
+
+.blog-conslusion{
+    color: #d9bc84;
+    font-family: "lexend", Sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 1.3em;
+}
+
+
+
+/* Form Styling */
+.form-container {
+    padding: 20px;
+    border: 1px solid #6c6c6c;
+    max-width: 80%;
+    text-align: center;
+}
+
+.form-heading-blog{
+    font-size: 24px;
+    font-family: 'Lexend', sans-serif;
+    color: #fff !important;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group,
+.email-group {
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #a38755;
+    color: #050F17;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+/* Responsive Design */
+/* Tablet view adjustments */
+@media (max-width: 921px) {
+    .content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .right-sidebar {
+        width: 100%;
+        order: 2; /* Place the sidebar below the blog list on smaller screens */
+    }
+
+    .blog-list {
+        width: 100%;
+    }
+
+    .blog-heading {
+        font-size: 40px;
+        text-align: center;
+    }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .blog-heading {
+        font-size: 25px;
+    }
+
+    .blog-post h2 {
+        font-size: 18px;
+    }
+
+    .blog-post p {
+        font-size: 13px;
+    }
+
+    .sticky-box h3 {
+        font-size: 18px;
+    }
+
+    .sticky-box {
+        position: static; /* Remove sticky effect for smaller screens */
+        margin-top: 20px;
+    }
+    
+    .form-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%; /* Full-width button on mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-post h2 {
+        font-size: 16px;
+    }
+
+    .blog-post p {
+        font-size: 12px;
+    }
+
+    .sticky-box h3 {
+        font-size: 16px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        padding: 10px;
+    }
+
+    .form-container button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,765 @@
+ /* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    }
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #050f17;
+
+}
+.banner1 {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: #FFFFFF; /* Set text color to pure white */
+    background-image: url('../images/bannerabout.jpg');
+    background-color: #000; /* Fallback color if image fails to load */
+    position: relative; /* Position relative for overlay */
+}
+
+/* Overlay for better text visibility */
+.banner1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+/* Heading styling */
+.banner-bread {
+    color: #fff; /* Keep breadcrumb links white */
+}
+
+.banner h2 {
+    color: #FFFFFF; /* Set heading color to pure white */
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #FFFFFF; /* Set breadcrumb link color to pure white */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+
+/* end banner */
+
+/* call to action */
+
+/* Main CTA Section */
+#cta-main {
+    padding: 120px 30px 80px;
+    background-color: #050f17;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background wrapper */
+.cta-background {
+    position: relative;
+    max-width: 100%;
+    max-height: 700px;
+}
+
+/* Background Image */
+.cta-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Hero Section */
+.cta-hero {
+    position: relative;
+    z-index: 2;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+/* Overlay Content */
+.cta-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Title */
+.cta-title {
+    color: #E8E8E8;
+    font-family: "Italiana", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+.cta-subtitle {
+    color: #e8e8e8;
+    font-size: 16px;
+    font-family: "Lexend", sans-serif;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Button */
+.cta-button {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #050f17;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cta-title {
+        font-size: 42px;
+    }
+    .cta-subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+    .cta-title {
+        font-size: 32px;
+    }
+    .cta-subtitle {
+        font-size: 14px;
+    }
+    .cta-overlay {
+        padding: 30px 20px;
+    }
+    .cta-button {
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 28px;
+    }
+    .cta-subtitle {
+        font-size: 13px;
+    }
+    .cta-button {
+        padding: 10px 25px;
+    }
+}
+
+/* end call to action */
+
+ /* get in touch */
+ .contact-section {
+    padding: 115px 0;
+    background-color: #050F17;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 40px;
+    border: 1px solid #6c6c6c;
+    max-width: 550px;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px; /* Adjust the gap between first and last name fields */
+    margin-bottom: 20px;
+    
+}
+
+.email-group{
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 47%; /* Make both input fields take up equal space */
+    font-size: 14px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #fff;
+}
+
+textarea {
+    height: 120px; /* Adjust the height of the message box */
+    resize: vertical; /* Make the textarea resizable */
+}
+
+button {
+    padding: 15px 30px; /* Increase the padding for a larger button */
+    background-color: #a38755;
+    color: #050F17;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust margin for space between form elements */
+    font-family: 'Lexend', sans-serif;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    max-width: 555px;
+}
+
+.contact-info h2 {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+    color: #e8e8e8;
+    font-family: "Italiana", Sans-serif;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.7em;
+    font-weight: 300;
+    font-family: "Lexend", Sans-serif;
+    text-align: left;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.contact-info ul li {
+    color: #e8e8e8  ;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+.contact-info ul li i {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .form-container, .contact-info {
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column; /* Make first and last name stack on top of each other on mobile */
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* Main Container Styling */
+.main-verticals-section {
+    background-color: #050f17;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Text Content Styling */
+.text-content {
+    flex: 1 1 45%;
+    text-align: left;
+}
+
+.section-intro {
+    color: #d1d1d1;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.text-content h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.description h3 {
+    color: #A8894D;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+
+.description p {
+    color: #e3e3e3;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Buttons Styling */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.book-consultation {
+    font-family: "Lexend", Sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 17px 35px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.view-projects {
+    color: #050f17;
+    background-color: #A8894D;
+}
+
+.book-consultation {
+    color: rgb(14, 11, 11);
+    background-color: #A8894D;
+}
+
+/* Image Content Styling */
+.image-content {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 500px;
+    /* border-radius: 15px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left:-30px;
+
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .description h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .description p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-projects, .book-consultation {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-content {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-content h2 {
+        font-size: 20px;
+    }
+
+    .description h3 {
+        font-size: 18px;
+    }
+
+    .description p {
+        font-size: 13px;
+    }
+}
+
+
+/* post guide section  */
+
+/* General Styling */
+
+.certificate-wrapper {
+    text-align: center;
+  }
+  
+  .certificate-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #A8894D;
+  }
+  
+
+/* tetimonial */
+
+/* Testimonials Section Styling */
+.testimonials-section {
+    background-color: #050F17;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.testimonials-section h3 {
+    color: #A8894D;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.testimonials-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.testimonials-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stars {
+    color: #A8894D;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #CCCCCC;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.testimonial h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 14px;
+    color: #A8894D;
+    font-weight: 500;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        max-width: 90%;
+    }
+
+    .testimonials-section h2 {
+        font-size: 28px;
+    }
+
+    .testimonials-section h3 {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+/* enquire button */
+
+
+/* Modal and form container styling */
+#enquiryModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#enquiryModal .form-container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    background: #5c5c5c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#enquiryModal h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center; /* Centering the h3 */
+}
+
+/* Input fields styling with black placeholder */
+#enquiryForm input[type="text"],
+#enquiryForm input[type="email"],
+#enquiryForm input[type="tel"],
+#enquiryForm textarea,
+#enquiryForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+    background: #fff !important;
+}
+
+/* Dropdown styling */
+#enquiryForm select {
+    appearance: none; /* Removes default dropdown arrow */
+    /* background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="black" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center; */
+    background-size: 16px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+/* Placeholder color styling */
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #000000; /* Black placeholder text */
+    opacity: 1; /* Ensures placeholder is fully opaque */
+}
+
+/* Focus effect */
+#enquiryForm input:focus,
+#enquiryForm textarea:focus,
+#enquiryForm select:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Submit and close buttons styling */
+#enquiryForm button[type="submit"],
+#enquiryForm button#closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enquiryForm button[type="submit"] {
+    background-color: #A8894D;
+    color: #ffffff;
+    width: 100%;
+}
+
+#enquiryForm button[type="submit"]:hover {
+    background-color: #050F17;
+}
+
+#enquiryForm button#closeModal {
+    color: #333;
+    margin-left: 10px;
+}
+
+#enquiryForm button#closeModal:hover {
+    background-color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+/* button */
+/* Container for the button */
+#enquireButtonContainer {
+    position: fixed;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 999;
+}
+
+/* Button styling */
+#enquireButton {
+    padding: 10px 20px;
+    background-color: #A8894d;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+#enquireButton:hover {
+    background-color: #f5f5f5; /* Darker shade of the original color */
+}
+
+/* end enquire */

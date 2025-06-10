@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: #111;
+}
+
+.form-section {
+    flex: 1;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.sign-in-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+.sign-in-box h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.forgot-password {
+    display: block;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #888;
+    text-decoration: none;
+}
+
+.sign-in-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0066ff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.sign-in-btn:hover {
+    background-color: #0051cc;
+}
+
+.signup-link {
+    text-align: center;
+    color: #888;
+}
+
+.signup-link a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.image-section {
+    flex: 1;
+    background: url('your-image-path.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.info-box {
+    width: 80%;
+    max-width: 400px;
+    text-align: left;
+    color: #fff;
+}
+
+.info-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.learn-more:hover {
+    background-color: #fff;
+    color: #000;
+}

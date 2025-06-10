@@ -1,0 +1,420 @@
+/* General body styles */
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #050F17;
+}
+
+/* Navbar styling */
+
+
+/* Sticky Header */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensures the header stays above other content */
+    background-color: #050F17; /* Matches your navbar background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+}
+
+
+
+/* General Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #050F17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: none;
+    z-index: 10;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu-a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition:  0.3s ease;
+}
+
+.dropdown-menu-a:hover {
+    background: #050F17;
+}
+
+/* Sub-Dropdown Menu */
+.sub-dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #050F17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: none;
+    z-index: 11;
+    max-width: 500px;
+}
+
+.dropdown-menu li:hover > .sub-dropdown-menu {
+    display: block;
+}
+
+.sub-dropdown-menu li {
+    position: relative;
+}
+
+.sub-dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+/* Navbar container */
+.navbar {
+    background-color: #050F17; /* Matches the dark background in the image */
+    height: 120px;
+    max-width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    height: 120px;
+}
+
+/* Logo styling */
+.navbar-logo img {
+    max-width: 150px; /* Adjusted width to align with the image */
+    height: auto;
+}
+
+.navbar-menu-container {
+    display: contents;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between logo, menu, and button */
+    max-width: 1450px; /* Limit content width for alignment */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding for spacing */
+    height: 100%; /* Stretch container to fill navbar height */
+}
+
+/* Navbar menu */
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0px; /* Space between menu items */
+    align-items: center; /* Ensure menu items are vertically centered */
+}
+
+.navbar-menu li {
+    position: relative; /* Required for dropdown menus */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    right: 0;
+    background-color: #050F17; /* Match navbar background */
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+    border: 1px solid;
+}
+
+.dropdown-menu .dropdown {
+    position: relative;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu-a {
+    color: white!important;
+    font-size: 10px!important;
+    text-decoration: none!important;
+    display: block!important;
+    padding: 5px 0!important;
+}
+
+.dropdown-menu-a:hover {
+    color: #A8894D !important; /* Gold hover effect */
+}
+
+/* Show dropdown on hover */
+.dropdown-menu .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Navbar links */
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.navbar-menu a:hover {
+    color: #A8894D; /* Gold hover effect */
+}
+
+/* Compare button */
+.navbar-compare {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 25px; /* Balanced padding for a premium feel */
+    background-color: #A8894D; /* Gold button */
+    color: #050F17; /* Dark text for contrast */
+    text-decoration: none;
+    border: none; /* No borders for a clean look */
+    height: fit-content; /* Ensures no unnecessary height */
+    display: flex;
+    align-items: center; /* Vertically center text inside the button */
+}
+
+.navbar-compare:hover {
+    background-color: white; /* Button hover effect */
+    color: #050F17;
+}
+/* Responsive Design */
+/* Navbar Styling */
+.navbar {
+    background-color: #050F17; /* Matches the dark background in the image */
+    height: 120px;
+    max-width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    height: 5       px;
+}
+
+/* Logo styling */
+.navbar-logo img {
+    max-width: 260px; /* Adjusted width to align with the image */
+    height: auto;
+}
+
+.navbar-menu-container {
+    display: contents;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between logo, menu, and button */
+    max-width: 1450px; /* Limit content width for alignment */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add padding for spacing */
+    height: 100%; /* Stretch container to fill navbar height */
+}
+
+/* Navbar menu */
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0px; /* Space between menu items */
+    align-items: center; /* Ensure menu items are vertically centered */
+}
+
+.navbar-menu li {
+    position: relative; /* Required for dropdown menus */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 120%; /* Position below the parent menu item */
+    right: 0;
+    background-color: #050F17; /* Match navbar background */
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+    border: 1px solid;
+    width: 200px; /* Set a fixed width */
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu-a {
+    color: white!important;
+    font-size: 14px!important; /* Adjusted font size */
+    text-decoration: none!important;
+    display: flex!important;
+    align-items: center; /* Align icon and text properly */
+    padding: 5px 10px!important; /* Reduced padding for closer spacing */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.dropdown-menu-a::after {
+    /* content: "▼"; Downward arrow */
+    font-size: 12px; /* Slightly larger arrow */
+    color: white;
+    margin-left: 5px; /* Reduced margin */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dropdown-menu-a:hover {
+    color: #A8894D; /* Gold hover effect */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Add down arrow for dropdown */
+.dropdown::after {
+    content: "▼"; /* Down arrow symbol */
+    font-size: 10px;
+    color: white;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Navbar links */
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.navbar-menu a:hover {
+    color: #A8894D; /* Gold hover effect */
+}
+
+/* Compare button */
+.navbar-compare {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 25px; /* Balanced padding for a premium feel */
+    background-color: #A8894D; /* Gold button */
+    color: #050F17; /* Dark text for contrast */
+    text-decoration: none;
+    border: none; /* No borders for a clean look */
+    height: fit-content; /* Ensures no unnecessary height */
+    display: flex;
+    align-items: center; /* Vertically center text inside the button */
+}
+
+.navbar-compare:hover {
+    background-color: white; /* Button hover effect */
+    color: #050F17;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust the dropdown menu positioning */
+    .dropdown-menu-service {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: 65px;
+        left: 60%; /* Position to the right of the parent menu item */
+        background-color: #1a1a1a; /* Match the dark theme */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        width: 200px; /* Fixed width */
+        padding: 10px 0;
+        z-index: 999; /* Ensure it appears above other elements */
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block; /* Show dropdown on click */
+    }
+
+    .dropdown-menu li {
+        padding: 10px 20px; /* Ensure proper padding */
+    }
+
+    .navbar-menu-container.show {
+        display: flex; /* Show the mobile menu */
+        flex-direction: column; /* Stack the menu items vertically */
+        align-items: center;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block; /* For hover effect */
+    }
+
+    /* Adjust navbar container for mobile view */
+    .navbar-menu-container {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a1a1a;
+        width: 100%;
+        position: absolute;
+        top: 120px;
+        right: 0;
+        z-index: 1000;
+        border-top: 1px solid #333;
+        padding: 25px;
+        height: 355px;
+    }
+
+    .navbar-menu-container.show {
+        display: flex; /* Show menu when toggled */
+        height: 385px;
+    }
+
+    /* Adjust padding for navbar items */
+    .navbar-menu {
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    /* Ensure mobile toggle button works */
+    .navbar-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .navbar-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+    }
+}
+
+
+/* end navbar */

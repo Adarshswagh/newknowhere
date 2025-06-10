@@ -1,0 +1,114 @@
+/* Basic Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #050f17;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar-logo img {
+    max-width: 120px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 5px 15px;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Navbar for Mobile */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    /* Hide regular navbar menu */
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #050f17;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    /* Show toggle button */
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Show menu when toggled */
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    /* Style adjustments for mobile dropdown */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        padding: 10px 0;
+        color: #fff;
+    }
+}

@@ -1,0 +1,1011 @@
+/* General body styles */
+
+#test-tag{
+    font-size: 1.5rem;
+    color: red;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    }
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    color: red;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #050f17;
+
+}
+.banner1 {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: #FFFFFF; /* Set text color to pure white */
+    background-image: url('../images/bannerabout.jpg');
+    background-color: #000; /* Fallback color if image fails to load */
+    position: relative; /* Position relative for overlay */
+}
+
+/* Overlay for better text visibility */
+.banner1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+/* Heading styling */
+.banner-bread {
+    color: #fff; /* Keep breadcrumb links white */
+}
+
+.banner h2 {
+    color: #FFFFFF; /* Set heading color to pure white */
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #FFFFFF; /* Set breadcrumb link color to pure white */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+
+/* about */
+
+.section-container {
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    background-color: rgb(14, 12, 12);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+/* Image Styling */
+.section-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #A8894D;
+}
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Styling */
+.section-content {  
+    margin-left: 50px;
+    max-width: 1200px;
+}
+.section-content h2 {
+    font-size: 40px;
+    margin: 0;
+    color: #A8894D;
+}
+.section-content p {
+    color: #fff5f5;
+    font-size: 16px;
+    margin: 10px 0 20px;
+    line-height: 1.6;
+    padding-top: 20px;
+}
+
+/* Statistics Styling */
+.statistics {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-item h3 {
+    font-size: 22px;
+    margin: 0;
+    color: #ffffff;
+    padding: 20px;
+}
+.stat-item p {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0 0;
+}
+
+/* Button Styling */
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/* features */
+
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 50px;
+    margin-left: 120px;
+}
+
+/* Card Styles */
+.card1 {
+    background-color: #050f17;
+    padding: 30px;
+    /* border-radius: 8px; */
+    border: 1px solid #A8894D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding: 40px;
+}
+
+.card1:hover {
+    background-color: #A8894D;
+}
+
+/* Icon Styling */
+.card-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Title and Description */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #ffffff;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0 0 15px;
+    line-height: 1.5;
+}
+
+/* Arrow Icon Overlay */
+.arrow-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(235, 238, 241, 0.8);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-description {
+        font-size: 13px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-description {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .arrow-icon {
+        font-size: 14px;
+        padding: 4px;
+    }
+}
+
+
+/* section with image */
+
+/* Consultation Section Styles */
+.consultation-section {
+    display: flex;
+    align-items: center;
+    background-color: #050f17;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto; /* Center align on page */
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+
+.consultation-section img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.consultation-content {
+    padding: 40px;
+    background-color: #050f17;
+    flex: 1;
+}
+
+.consultation-content h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #A8894D;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.consultation-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #A8894D;
+    margin: 0 0 20px;
+}
+
+.consultation-content p {
+    font-size: 16px;
+    color: #A8894D;
+    line-height: 1.6;
+    margin: 0 0 30px;
+}
+
+.consultation-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #A8894D;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.consultation-button:hover {
+    background-color: #ecf0f5;
+}
+
+/* faq section */
+
+
+/* FAQ Section Styling */
+.faq-section {
+    background-color: #050f17;
+    color: #ffffff;
+    padding: 20px 20px;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+}
+
+.faq-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.faq-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.faq-text h2 span {
+    color: #A8894D;
+    /* text-decoration: underline; */
+}
+
+.faq-text p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top:50px;
+}
+
+.faq-item {
+    background-color: #1c1c1c;
+    /* border-radius: 8px; */
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-icon-left {
+    font-size: 16px;
+    color: #A8894D;
+    margin-right: 10px;
+}
+
+.faq-icon-right {
+    font-size: 20px;
+    color: #A8894D;
+}
+
+.faq-answer {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 0 20px 15px 18px;
+    display: none; /* Hide initially */
+}
+
+.faq-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.faq-image img {
+    max-width: 100%;
+    height: 550px;
+    /* border-radius: 8px; */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .faq-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq-text h2 {
+        font-size: 28px;
+    }
+
+    .faq-text p {
+        font-size: 14px;
+    }
+}
+
+
+
+/* how it works */
+
+/* General section styling */
+.how-it-works-section {
+    background-color: #050f17; /* Background color */
+    padding: 0px 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+}
+
+.how-it-works-section h2 {
+    color: #A8894D;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Container styling */
+.how-it-works-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 142px;
+    padding-top: 50px;
+}
+
+/* Individual item styling */
+.how-it-works-item {
+    background-color: #050f17;
+    padding: 20px;
+    /* border-radius: 10px; */
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #a8894d52;
+}
+
+.how-it-works-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon container styling */
+.icon-container {
+    background-color: #e8e6e3;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.icon-container img {
+    width: 70px; /* Adjust icon size if necessary */
+    height: 70px;
+}
+
+/* Text styling */
+.how-it-works-item p {
+    color: #ffffff;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .how-it-works-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Space between items */
+        padding: 20px 15px; /* Some padding around */
+    }
+
+    .how-it-works-item {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ffffff14; /* Optional: light border */
+        border-radius: 8px;
+        background-color: #0a0a0a; /* Optional: match theme */
+    }
+
+    .how-it-works-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #A8894D;
+    }
+
+    .how-it-works-item p {
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 1.5;
+    }
+
+    .how-it-works-item .icon {
+        font-size: 32px;
+        color: #A8894D;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Client Success Section */
+/* Centering the full section */
+#rent-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #050f17; /* Optional background color */
+    padding: 20px; /* Optional padding for spacing */
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.client-success-section {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px; /* Adjust as needed */
+    width: 100%;
+    background-color: #050f17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* border-radius: 8px; */
+    overflow: hidden;
+}
+
+.client-success-image {
+    width: 40%;
+    object-fit: cover;
+}
+
+.client-success-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the content area */
+    width: 60%;
+}
+
+.client-success-content h2 {
+    color: #A8894D;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    align-self: flex-start; /* Aligns the heading to the left within the content */
+}
+
+.client-success-content p {
+    color: #E8E8E8;
+    font-family: "Lexend", Sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.8em;
+    margin-top: 20px;
+}
+
+
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .client-success-section {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .client-success-image, .client-success-content {
+        width: 100%;
+    }
+
+    .client-success-content {
+        padding: 20px;
+    }
+
+    .client-success-content h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .client-success-section {
+        padding-top: 20px;
+    }
+
+    .client-success-content h2 {
+        font-size: 1.4em;
+    }
+
+    .client-success-content p {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+}
+  
+
+  /* para */
+
+  .rent-agreement-section {
+    background-color: #050f17;
+    padding: 40px;
+    color: #ddd;
+    max-width: 1400px !important ;
+    margin: 20px auto;
+    border-radius: 8px;
+    padding-top: 50px;
+  }
+  
+  .rent-agreement-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #A8894D;
+  }
+  
+  .rent-agreement-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .rent-agreement-section {
+      padding: 20px;
+    }
+  
+    .rent-agreement-section h3 {
+      font-size: 1.3em;
+    }
+  
+    .rent-agreement-section p {
+      font-size: 0.95em;
+    }
+  }
+  
+
+  /* call to action */
+
+#main-call{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #050f17;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.call-to-action {
+    /* background-color: #050f17; */
+    position: relative;
+    background-image: url('../images/bannerf.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* max-height: 700px; */
+}
+
+.hero-section {
+    
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.overlay {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* border-radius: 10px; */
+}
+
+h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+p {
+    text-align: left;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    /* max-width: 700px; */
+}
+
+.btn {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 30px;
+    /* text-decoration: none; */
+    font-size: 15px;
+    /* font-weight: bold; */
+    font-family: 'Lexend'sans-serif;
+    border-radius: 0px;
+
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+/* end call to action */
+
+
+
+
+/* enquire button */
+
+
+/* Modal and form container styling */
+#enquiryModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#enquiryModal .form-container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    background: #5c5c5c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#enquiryModal h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center; /* Centering the h3 */
+}
+
+/* Input fields styling with black placeholder */
+#enquiryForm input[type="text"],
+#enquiryForm input[type="email"],
+#enquiryForm input[type="tel"],
+#enquiryForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder color styling */
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #000000; /* Black placeholder text */
+    opacity: 1; /* Ensures placeholder is fully opaque */
+}
+
+/* Focus effect on input fields */
+#enquiryForm input[type="text"]:focus,
+#enquiryForm input[type="email"]:focus,
+#enquiryForm input[type="tel"]:focus,
+#enquiryForm textarea:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Submit and close buttons styling */
+#enquiryForm button[type="submit"],
+#enquiryForm button#closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enquiryForm button[type="submit"] {
+    background-color: #A8894D;
+    color: #ffffff;
+    width: 100%;
+}
+
+#enquiryForm button[type="submit"]:hover {
+    background-color: #050F17;
+}
+
+#enquiryForm button#closeModal {
+    color: #333;
+    margin-left: 10px;
+}
+
+#enquiryForm button#closeModal:hover {
+    background-color: #999;
+}
+
+/* button */
+/* Container for the button */
+#enquireButtonContainer {
+    position: fixed;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 999;
+}
+
+/* Button styling */
+#enquireButton {
+    padding: 10px 20px;
+    background-color: #A8894d;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+#enquireButton:hover {
+    background-color: #f5f5f5; /* Darker shade of the original color */
+}
+
+
+.home-loan-button {
+    border-radius: 0;
+    font-size: 13px;
+    color: #050f17;
+    background-color: #a8894d;
+    font-weight: 200;
+    padding: 15px 26px;
+}
+
+.home-loan-button:hover {
+    background-color: #fff;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #A8894D;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 400px;
+}
+
+.popup-content {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.popup-para{
+    text-align: center;
+    color: #fff;
+}
+
+/* Captcha Container */
+.captcha-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* margin-top: 10px; */
+    height: 30px;
+}
+
+.captcha-container label {
+    font-size: 16px;
+    font-weight: bold;
+    width: 85px;
+}
+
+.captcha-container input {
+    width: 100% !important;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* end enquire */

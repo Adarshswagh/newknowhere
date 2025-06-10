@@ -1,0 +1,357 @@
+
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    background-color: #050f17;
+
+}
+
+.banner {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/logo/newbanner.png');
+    opacity: 0.8;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay for better text visibility */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 73%);    /* Dark overlay */
+    z-index: 1;
+}
+
+/* Content inside the banner */
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+
+
+/* Heading styling */
+.banner h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+    text-align: center;
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #e8e8e8; /* Gold color for links */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px; /* Further reduction for very small screens */
+    }
+
+    .banner p {
+        font-size: 12px; /* Breadcrumb font size */
+    }
+}
+
+/* end banner */
+
+
+/******************** FAQ SECTION ********************/
+#faq-section {
+    display: flex;
+    gap: 30px;
+    background-color: #050f17;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.faq-left {
+    width: 60%;
+}
+
+.faq-right {
+    position: sticky;
+    top: 20px;
+    /* background-color: #222; */
+    color: #fff;
+    padding: 20px;
+    border: 1px solid #6c6c6c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+
+.faq-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: 28px;
+    color: #a8894d;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background: #1b2730;
+    margin-bottom: 15px;
+    border: 1px solid #a8894d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #2f3e47;
+}
+
+.faq-icon {
+    font-size: 20px;
+    color: #a8894d;
+    margin-right: 10px;
+}
+
+.faq-heading {
+    font-size: 18px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+    border-top: 1px solid #a8894d;
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    line-height: 1.6;
+}
+
+/******************** FAQ ANIMATION ********************/
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/******************** ENQUIRY FORM ********************/
+.form-heading {
+    font-size: 24px;
+    font-family: 'Lexend', sans-serif;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#enquiryForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+   
+}
+
+.form-label {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    color: #a8894d;
+    margin-bottom: 5px;
+}
+
+#enquiryForm input,
+#enquiryForm textarea {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #050f17;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#enquiryForm textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-button {
+    padding: 10px 20px;
+    background-color: #a8894d;
+    color: #050f17;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #fff;
+    color: #050f17;
+}
+
+/******************** MEDIA QUERIES ********************/
+@media (max-width: 768px) {
+    #faq-section {
+        flex-direction: column;
+    }
+
+    .faq-left, .faq-right {
+        width: 100%;
+    }
+}
+/* end faq section */
+
+
+/* call to action */
+
+#main-call{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #050f17;
+    padding-top: 50px !important;
+    padding-bottom: 100px;
+}
+
+.call-to-action {
+    /* background-color: #050f17; */
+    position: relative;
+    background-image: url('../images/bannerf.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 700px;
+}
+
+.hero-section {
+    
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.overlay {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* border-radius: 10px; */
+}
+
+.call-to-action p{
+    text-align: center;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.banner-bread {
+    text-align: left;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+.btn {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 30px;
+    /* text-decoration: none; */
+    font-size: 15px;
+    /* font-weight: bold; */
+    font-family: 'Lexend'sans-serif;
+    border-radius: 0px;
+
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+/* end call to action */

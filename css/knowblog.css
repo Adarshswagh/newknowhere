@@ -1,0 +1,288 @@
+/* banner */
+/* Banner styling */
+#banner-blog1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #050f17;
+    padding-bottom: 20px;
+}
+
+.banner-blog {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: #FFFFFF; /* Set text color to pure white */
+    background-image: url('../images/banner/5.png');
+    background-color: #000; /* Fallback color if image fails to load */
+    position: relative; /* Position relative for overlay */
+}
+
+/* Overlay for better text visibility */
+.banner-blog::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for better contrast */
+    z-index: 1;
+}
+
+.blog-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+/* Heading styling */
+.banner-bread {
+    color: #fff; /* Keep breadcrumb links white */
+}
+
+.blog-heading {
+    color: #e8e8e8; /* Set heading color to pure white */
+    font-family: "Italiana", Sans-serif;    
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.blog-para {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+    text-align: center;
+}
+
+/* Links inside the breadcrumbs */
+.blog-para a {
+    color: #FFFFFF; /* Set breadcrumb link color to pure white */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.blog-para a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner-blog {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner-blog h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner-blog p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+/* end banner */
+
+/* blog */
+#blog {
+    background-color: #050f17;
+    max-width: 100%;
+}
+
+.container-blog {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #050f17;
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+    justify-content: center; /* Center content horizontally */
+    margin-top: 50px;
+}
+
+/* Blog List Section */
+.blog-list {
+    flex: 2;
+}
+
+.blog-heading {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.blog-post {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    max-height: 1500px;
+    margin-bottom: 10px;
+    /* border-radius: 8px; */
+}
+
+.blog-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-link:hover {
+    text-decoration: none;
+}
+
+.blog-post h2 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #a8894d;
+    margin-bottom: 5px;
+    font-family: "Lexend", Sans-serif;
+}
+
+.blog-post p {
+    font-size: 15px;
+    color: #e8e8e8;
+    font-weight: 100;
+    line-height: 1.7em;
+    font-family: "Lexend", sans-serif;
+}
+
+.read-link {
+    font-family: "Lexend", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #A8894d;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.read-link:hover {
+    color: #ffaa05;
+    text-decoration: none;
+}
+
+.right-sidebar {
+    flex: 1.5;
+    position: relative;
+}
+
+.sticky-box {
+    background: transparent;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 100px;
+    text-align: center;
+}
+
+.sticky-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+/* Form Styling */
+.form-container {
+    padding: 20px;
+    border: 1px solid #6c6c6c;
+    max-width: 80%;
+    text-align: center;
+}
+
+.input-group,
+.email-group {
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #a38755;
+    color: #050F17;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+.created-at {
+    color: #fff;
+}
+
+.para-blog {
+    color: white !important;
+}
+
+.main-content {
+    color: #f1f0f0;
+}
+
+/* Responsive Design */
+/* Tablet view adjustments */
+@media (max-width: 921px) {
+    .content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .right-sidebar {
+        width: 100%; /* Adjust width of right sidebar for smaller screens */
+    }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .right-sidebar {
+        width: 100%; /* Adjust width of right sidebar for mobile */
+    }
+
+    .sticky-box {
+        position: relative;
+        top: auto;
+    }
+}
+
+

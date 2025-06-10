@@ -1,0 +1,1216 @@
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif; /* Replace with your font */
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    }
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    background-color: #050f17;
+
+}
+.banner1 {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: #FFFFFF; /* Set text color to pure white */
+    background-image: url('../images/bannerabout.jpg');
+    background-color: #000; /* Fallback color if image fails to load */
+    position: relative; /* Position relative for overlay */
+}
+
+/* Overlay for better text visibility */
+.banner1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+/* Heading styling */
+.banner-bread {
+    color: #fff; /* Keep breadcrumb links white */
+}
+
+.banner h2 {
+    color: #FFFFFF; /* Set heading color to pure white */
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #FFFFFF; /* Set breadcrumb link color to pure white */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D; /* Change color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+
+/* end banner */
+
+/* why choose us */
+
+.why-choose-us {
+    text-align: center;
+    max-width: 100%;
+    padding: 10px;
+    background-color: #020101;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.why-choose-us h2 {
+    font-size: 40px;
+    color: #A8894D;
+    margin-bottom: 20px;
+    padding-top: 100px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid #ffffff14;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    color: #A8894D;
+    margin: 10px 0;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/* why choose us end */
+
+/* about section */
+/* Default styles (for desktop view) */
+.business-loan {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    background-color: #050f17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin: 20px;
+    padding: 50px 100px;
+    padding-top: 100px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 40px;
+    color: #A8894D;
+    margin: 0 0 10px;
+}
+
+.content p {
+    color: #E8E8E8;
+    font-family: "Lexend", Sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 1.5em;
+    margin-top: 20px;
+}
+
+.home-loan-button {
+    border-radius: 0;
+    font-size: 13px;
+    color: #050f17;
+    background-color: #a8894d;
+    font-weight: 200;
+    padding: 15px 26px;
+}
+
+.home-loan-button:hover {
+    background-color: #fff;
+}
+
+/* Responsive Styles for Tablet */
+@media (max-width: 1024px) {
+    .business-loan {
+        flex-direction: column;
+        padding: 30px 50px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .checklist {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .checklist .list-left, .checklist .list-right {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .business-loan {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 250px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 13px;
+    }
+
+    .checklist {
+        display: block;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .checklist .list-left, .checklist .list-right {
+        display: block;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+
+/* Responsive Styles for Tablet */
+@media (max-width: 1024px) {
+    .business-loan {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .checklist {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .checklist .list-left,
+    .checklist .list-right {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .business-loan {
+        flex-direction: column;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 13px;
+        line-height: 1.6em;
+    }
+
+    .checklist {
+        display: block;
+        text-align: left;
+        padding: 0;
+    }
+
+    .checklist .list-left,
+    .checklist .list-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .home-loan-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+
+
+/* about section end */
+
+
+.checklist {
+    /* display: flex; */
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-left: -40px;
+    margin-top: 35px;
+}
+
+.checklist li {
+    list-style: none;
+    margin-bottom: 10px;
+    color: #E8E8E8;
+    font-family: "Lexend", Sans-serif;
+    font-size: 14px;
+}
+
+.checklist li span {
+    color: #d2a679; /* Gold-like color for check marks */
+    margin-right: 10px;
+}
+
+
+/* faq section */
+
+.faq-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.faq-content {
+    flex: 1;
+}
+
+.faq-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.faq-content p {
+    font-size: 16px;
+    color: #fefbfb;
+    margin-bottom: 20px;
+}
+
+.faq-questions .question {
+    font-size: 18px;
+    color: #f2f0f0;
+    background: #0a0909;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.answer {
+    display: none;
+    font-size: 16px;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.faq-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .faq-image {
+        order: 1;
+    }
+    
+    .faq-content {
+        order: 2;
+    }
+}
+
+/* faq section end */
+
+/* Basic styles */
+.loan-section {
+    font-family: 'Lexend', sans-serif;
+    padding: 86px 0px 20px 136px;
+    width: 90%;
+    
+    
+}
+
+.loan-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #A8894D;
+}
+
+.loan-card {
+    background: #101111;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 30px 20px 30px;
+    border: 1px solid #A8894D;
+}
+
+.loan-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.loan-icon i {
+    font-size: 24px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.loan-icon{
+    color: #A8894D;
+}
+
+.loan-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+.apply-btn {
+    background-color: #A8894D;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.loan-terms {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.term {
+    flex: 1;
+    text-align: center;
+}
+
+.term span:first-child {
+    display: block;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.term span:last-child {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .loan-terms {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .apply-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
+/* call to action */
+
+/* Main CTA Section */
+#cta-main {
+    padding: 120px 30px 80px;
+    background-color: #050f17;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background wrapper */
+.cta-background {
+    position: relative;
+    max-width: 100%;
+    max-height: 700px;
+}
+
+/* Background Image */
+.cta-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Hero Section */
+.cta-hero {
+    position: relative;
+    z-index: 2;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+/* Overlay Content */
+.cta-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Title */
+.cta-title {
+    color: #E8E8E8;
+    font-family: "Italiana", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+.cta-subtitle {
+    color: #e8e8e8;
+    font-size: 16px;
+    font-family: "Lexend", sans-serif;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Button */
+.cta-button {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #050f17;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cta-title {
+        font-size: 42px;
+    }
+    .cta-subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+    .cta-title {
+        font-size: 32px;
+    }
+    .cta-subtitle {
+        font-size: 14px;
+    }
+    .cta-overlay {
+        padding: 30px 20px;
+    }
+    .cta-button {
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 28px;
+    }
+    .cta-subtitle {
+        font-size: 13px;
+    }
+    .cta-button {
+        padding: 10px 25px;
+    }
+}
+
+/* end call to action */
+
+/* form */
+
+.loan-offer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #050f17; /* Dark background color */
+    padding: 50px;
+    color: #fff; /* White text color for contrast */
+}
+
+.content-wrapper {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #615dfa; /* Highlight color for 'Home Loan Offers' */
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    /* border-radius: 5px; */
+    border: 1px solid #ccc;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.checkbox-wrapper label {
+    margin-left: 10px;
+    color: #ccc;
+}
+
+.checkbox-wrapper a {
+    color: #615dfa;
+    text-decoration: underline;
+}
+
+.get-quote-button {
+    font-family: "Lexend", Sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 25px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.get-quote-button:hover {
+    background-color: #fff; /* Darker shade on hover */
+}
+
+.image-wrapper img {
+    max-width: 400px;
+}
+
+
+
+
+/* enquire button */
+
+
+/* Modal and form container styling */
+#enquiryModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#enquiryModal .form-container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    background: #5c5c5c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#enquiryModal h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center; /* Centering the h3 */
+}
+
+/* Input fields styling with black placeholder */
+#enquiryForm input[type="text"],
+#enquiryForm input[type="email"],
+#enquiryForm input[type="tel"],
+#enquiryForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder color styling */
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #000000; /* Black placeholder text */
+    opacity: 1; /* Ensures placeholder is fully opaque */
+}
+
+/* Focus effect on input fields */
+#enquiryForm input[type="text"]:focus,
+#enquiryForm input[type="email"]:focus,
+#enquiryForm input[type="tel"]:focus,
+#enquiryForm textarea:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Submit and close buttons styling */
+#enquiryForm button[type="submit"],
+#enquiryForm button#closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enquiryForm button[type="submit"] {
+    background-color: #A8894D;
+    color: #ffffff;
+    width: 100%;
+}
+
+#enquiryForm button[type="submit"]:hover {
+    background-color: #050F17;
+}
+
+#enquiryForm button#closeModal {
+    color: #333;
+    margin-left: 10px;
+}
+
+#enquiryForm button#closeModal:hover {
+    background-color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+/* button */
+/* Container for the button */
+#enquireButtonContainer {
+    position: fixed;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 999;
+}
+
+/* Button styling */
+#enquireButton {
+    padding: 10px 20px;
+    background-color: #A8894d;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+#enquireButton:hover {
+    background-color: #f5f5f5; /* Darker shade of the original color */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .loan-offer-section {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-field {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .checkbox-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        font-size: 13px;
+    }
+
+    .checkbox-wrapper label {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .get-quote-button,
+    .home-loan-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .image-wrapper {
+        margin-top: 30px;
+    }
+
+    .image-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+.input-field,
+button {
+    box-sizing: border-box;
+}
+
+
+/* end enquire */
+
+
+/* banks */
+.loan-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    /* background-color: #fff; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    max-width: 540px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    background-color: #e8e8e8;
+    color: #333;
+    cursor: pointer;
+    font-weight: 400;
+    /* border-radius: 5px; */
+    margin: 0 5px;
+}
+
+.tab-button.active {
+    background-color: #a8894d;
+    color: #050F17;
+}
+
+button:hover {
+    background-color: #a8894d;
+}
+
+.loan-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.loan-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+    margin-bottom: 15px;
+    background-color: #0a1a28; /* Matches Knowhere theme */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* Text color for better contrast */
+}
+
+.loan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.loan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Slightly different shade for header */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.loan-title {
+    font-size: 18px;
+    font-weight: 300;
+    color: #050F17; /* Title color */
+    display: flex;
+    align-items: center;
+}
+
+.loan-title img {
+    margin-right: 10px; /* Space for any icon next to title */
+}
+
+.action-button {
+    background-color: #a8894d;
+    color: #ffffff;
+    padding: 8px 16px;
+    /* border-radius: 20px; */
+    border: 2px solid #a8894d;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #fff;
+    color: #050f17;
+    border-color: #050F17;
+    text-decoration: none;
+}
+
+.loan-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        font-size: 14px;
+        color: #c0c0c0;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-bottom: 15px;
+}
+
+.loan-info div {
+    text-align: left;
+    flex: 1; /* Equal spacing for each block */
+    max-width: 165px;
+}
+
+
+.status-bar {
+    width: 4px;
+    border-radius: 4px;
+}
+
+.status-private {
+    background-color: #5c6bc0;
+}
+
+.status-nationalized {
+    background-color: #d32f2f;
+}
+
+.status-nbfc {
+    background-color: #388e3c;
+}
+
+/* end banks */
+
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 500px;
+    text-align: center;
+}
+
+.popupform-heading{
+    color: #A8894D;
+}
+
+.popup-para{
+    color: #000;
+    text-align: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 20px;
+}
+
+.input-field, #detailsForm input, #detailsForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: #A8894D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #876f3d;
+}
+
+/* Error Popup */
+#errorPopup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 400px;
+    text-align: center;
+}
+
+#errorMessage {
+    color: #a8894d;
+    font-weight: bold;
+}
+
+
+.error-heading{
+    color: #a8894d;
+    font-size: 20px;
+    font-weight: 600;
+}

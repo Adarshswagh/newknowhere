@@ -1,0 +1,614 @@
+/* General body styles */
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #050F17;
+}
+
+/* banner */
+/* Banner styling */
+
+#banner-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    background-color: #050f17;
+
+}
+
+.banner {
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/banner/5.png');
+    opacity: 0.8;
+}
+
+
+.banner-commercial{
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/banner/2.png');
+    opacity: 0.8;
+}
+
+.banner-plotting{
+    height: 400px; /* Ensure height is set */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    display: flex; /* Flex for centering content */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: white; /* Text color */
+    background-image: url('../images/banner/3.png');
+    opacity: 0.8;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay for better text visibility */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 73%);    /* Dark overlay */
+    z-index: 1;
+}
+
+/* Content inside the banner */
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+
+
+/* Heading styling */
+.banner h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+/* Breadcrumb styling */
+.banner p {
+    font-size: 14px; /* Set font size to 14px */
+    font-family: 'Lexend', sans-serif; /* Lexend font for breadcrumbs */
+    margin: 10px 0 0; /* Space below the heading */
+    text-align: center;
+}
+
+/* Links inside the breadcrumbs */
+.banner p a {
+    color: #e8e8e8; /* Gold color for links */
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Hover effect for links */
+.banner p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #A8894D;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Smaller font for mobile */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust breadcrumb text size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 28px; /* Further reduction for very small screens */
+    }
+
+    .banner p {
+        font-size: 12px; /* Breadcrumb font size */
+    }
+}
+
+/* end banner */
+
+
+/* call to action */
+
+#main-call{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #050f17;
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.call-to-action {
+    /* background-color: #050f17; */
+    position: relative;
+    background-image: url('../images/bannerf.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 700px;
+}
+
+.hero-section {
+    
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.overlay {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    /* border-radius: 10px; */
+}
+
+.call-to-action p{
+    text-align: center;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+h2 {
+    color: #E8E8E8;
+    font-family: "Italiana", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.banner-bread {
+    text-align: left;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+.btn {
+    background-color: #A8894d;
+    color: #050f17;
+    padding: 15px 30px;
+    /* text-decoration: none; */
+    font-size: 15px;
+    /* font-weight: bold; */
+    font-family: 'Lexend'sans-serif;
+    border-radius: 0px;
+
+}
+
+.btn:hover {
+    background-color: #fff;
+}
+
+/* end call to action */
+
+
+
+
+
+
+/* enquire button */
+
+
+/* Modal and form container styling */
+#enquiryModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#enquiryModal .form-container {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto;
+    background: #5c5c5c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#enquiryModal h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    /* Centering the h3 */
+}
+
+/* Input fields styling with black placeholder */
+#enquiryForm input[type="text"],
+#enquiryForm input[type="email"],
+#enquiryForm input[type="tel"],
+#enquiryForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder color styling */
+#enquiryForm input::placeholder,
+#enquiryForm textarea::placeholder {
+    color: #000000;
+    /* Black placeholder text */
+    opacity: 1;
+    /* Ensures placeholder is fully opaque */
+}
+
+/* Focus effect on input fields */
+#enquiryForm input[type="text"]:focus,
+#enquiryForm input[type="email"]:focus,
+#enquiryForm input[type="tel"]:focus,
+#enquiryForm textarea:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Submit and close buttons styling */
+#enquiryForm button[type="submit"],
+#enquiryForm button#closeModal {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enquiryForm button[type="submit"] {
+    background-color: #A8894D;
+    color: #ffffff;
+    width: 100%;
+}
+
+#enquiryForm button[type="submit"]:hover {
+    background-color: #050F17;
+}
+
+#enquiryForm button#closeModal {
+    color: #333;
+    margin-left: 10px;
+}
+
+#enquiryForm button#closeModal:hover {
+    background-color: #999;
+}
+
+
+
+/* button */
+/* Container for the button */
+#enquireButtonContainer {
+    position: fixed;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 999;
+}
+
+/* Button styling */
+#enquireButton {
+    padding: 10px 20px;
+    background-color: #A8894d;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    z-index: 99px;
+    /* Smooth transition for background color */
+}
+
+/* Hover effect */
+#enquireButton:hover {
+    background-color: #f5f5f5;
+    /* Darker shade of the original color */
+}
+
+/* end enquire */
+
+
+
+/* forms */
+
+
+.multiple-forms {
+    padding: 40px 0;
+}
+.multiple-form-container {
+    background: #fdfbf7;
+    border-radius: 12px;
+    padding: 30px;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.list-group-item {
+    background: transparent;
+    border: none;
+    padding: 12px 15px;
+    font-weight: 500;
+}
+.list-group-item.active {
+    background: #A8894D;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+}
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+.btn-primary {
+    font-family: "Lexend", Sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #050F17;
+    background-color: #A8894D;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    padding: 17px 35px 17px 35px;
+    text-decoration: none;
+}
+.btn-primary:hover {
+    background: #8c703a;
+}
+.option-container {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    margin-top: 50px;
+}
+.option-box {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.option-box:hover {
+    border-color: #a8894d;
+    background-color: #f0e9d9;
+    transform: scale(1.05);
+}
+.option-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.option-box input {
+    position: absolute;
+    opacity: 0;
+}
+.option-box.selected {
+    border-color: #a8894d;
+    background-color: #e2ce9f;
+}
+.form-buttons{
+    margin-top: 30px;
+}
+
+.next-btn{
+    font-family: "Lexend", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #fff;
+    background-color: #A8894D;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px !important;
+    padding: 15px 30px 15px 30px;
+    text-decoration: none;
+}
+
+.next-btn:hover{
+    background-color: #75613a;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-success{
+    font-family: "Lexend", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #fff;
+    background-color: #A8894D !important;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px !important;
+    padding: 15px 30px 15px 30px;
+    text-decoration: none;
+}
+
+.btn-success:hover{
+
+    background-color: #75613a !;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.option-text{
+    text-align: left;
+    color: #050F17;
+    font-size: 22px;
+    font-family: "Lexend", Sans-serif;
+    max-width: 700px;
+}
+
+
+.form-question {
+    color: #050f17;
+    font-family: "Italiana", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #a8894d !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    color: #A8894d;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+    .sidebar-timeline {
+        justify-content: center;
+    }
+    .timeline {
+        list-style: none;
+        padding: 0;
+        position: relative;
+    }
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 24px;
+        top: 0;
+        height: calc(20% * (var(--active-step, 1) - 1)); /* Stop line after last step */
+        width: 4px;
+        background: #ccc;
+        transition: all 0.4s;
+    }
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .step-circle {
+        width: 50px;
+        height: 50px;
+        background: #ffffff;
+        color: #a8894d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-weight: bold;
+        margin-right: 15px;
+        position: relative;
+        z-index: 2;
+        transition: background 0.4s;
+        border: 1px solid #a8894d;
+    }
+    .timeline-item.active .step-circle {
+        background: #A8894D;
+        color: #fff;
+    }
+    .step-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #A8894D;
+    }
+    
+
+    
+    .timeline::before {
+        background: #a8894d;
+    }
+
+/* end forms */

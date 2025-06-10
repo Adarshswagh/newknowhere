@@ -1,0 +1,1802 @@
+/*================ Extra small device responsive css area start ===================*/
+@media ( max-width: 575.99px ) {
+   
+    /*================ navbar responsive css area start ===================*/
+        .navbar-brand img {
+           width    : 100px;
+        }
+    
+        .navbar > .container, .navbar > .container-fluid, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container-xl, .navbar > .container-xxl {
+            margin  : 0 10px;
+        }
+    
+        .nav_button {
+            display : none;
+        }
+    
+        .search {
+            display : none;
+        }
+    
+        .navbar-toggler {
+            color   : #fff;
+            border  : 2px solid #ddd;
+        }
+    
+        .navbar-toggler:focus {
+            box-shadow  : 0 0 0 transparent;
+        }
+    
+        .navbar-nav .nav-item {
+            padding     : 5px 8px;
+            text-align  : center;
+        }
+    
+    /*================ banner responsive css area start ===================*/
+        #banner {
+            margin  : 0 10px !important;
+        }
+    
+        .bann_header h1 {
+            font-size       : 20px;
+            padding-top     : 10px;
+            padding-bottom  : 10px;
+        }
+    
+    /*================ about responsive css area start ===================*/
+        #about {
+            padding-top: 15px;
+            padding-bottom: 50px;
+        }
+    
+        .img-fluid {
+            margin-top  : 20px;
+        }
+    
+        .abu_play_button img {
+            top     : -30px;
+            left    : 50%;
+        }
+    
+        .about_right_content {
+            padding-top     : 14px;
+            padding-left    : 0px;
+        }
+    
+        .abut_text h2 {
+            font-size   : 25px;
+            text-align  : center;
+            line-height : 35px;
+    
+        }
+    
+        .abut_text p {
+            font-size       : 13px;
+            line-height     : 22.8px;
+            padding-bottom  : 5px;
+            text-align      : justify;
+            padding         : 0 50px;
+        }
+        .about_icons{
+            margin-left : 30px;
+        }
+    
+        .about_icons p {
+            font-size   : 13px;
+            line-height : 18.8px;
+        }
+    
+        .about_button {
+            text-align  : center;
+        }
+    
+        .about_button span {
+            font-size       : 13px;
+            line-height     : 18.75px;
+            padding-top     : 14px;
+            padding-left    : 14px;
+            padding-bottom  : 14px;
+        }
+    
+        .about_button img {
+            margin-top      : -4px;
+            margin-left     : 9px;
+            padding-right   : 19px;
+        }
+    
+        .about_button button {
+            margin-top  : 30px;
+        }
+    
+        .about_count_items1 h3 {
+            font-size   : 50px;
+            line-height : 65.75px;
+            text-align  : center;
+        }
+    
+        .about_count_items1 i {
+            font-size   : 20px;
+            right       : 12px;
+        }
+    
+        .about_count_items1 p {
+            font-size   : 13px;
+            text-align  : center;
+        }
+    
+        .about_count_items2 h3 {
+            font-size   : 50px;
+            line-height : 65.75px;
+            text-align  : center;
+            margin-left : 0;
+        }
+    
+        .about_count_items2 i {
+            font-size   : 20px;
+            right       : 10px;
+        }
+    
+        .about_count_items2 p {
+            font-size   : 13px;
+            text-align  : center;
+        }
+    
+        .about_count_items3 h3 {
+            font-size   : 50px;
+            line-height : 65.75px;
+            text-align  : center;
+        }
+    
+        .about_count_items3 i {
+            font-size   : 20px;
+            left        : 181px;
+        }
+    
+        .about_count_items3 p {
+            font-size   : 13px;
+            text-align  : center;
+        }
+    
+        .about_count_items4 h3 {
+            font-size   : 50px;
+            line-height : 65.75px;
+            text-align  : center;
+        }
+    
+        .about_count_items4 i {
+            font-size   : 20px;
+            left        : 181px;
+        }
+    
+        .about_count_items4 p {
+            font-size   : 13px;
+            text-align  : center;
+        }
+    
+        .abu_main {
+            margin-top  : 60px;
+        }
+    
+     /*================ home  responsive css area start ===================*/
+        #home {
+            padding-top     : 50px;
+            padding-bottom  : 50px;
+            margin          : 0 10px !important;
+        }
+    
+        .home_content {
+            padding-top     : 10px;
+            padding-left    : 10px;
+            padding-right   : 10px;
+            padding-bottom  : 24px;
+        }
+    
+        .home_content h3 {
+            font-size       : 17px;
+            line-height     : 59.9px;
+            margin-bottom   : 0px;
+        }
+    
+        .home_content p {
+            font-size   : 13px;
+            line-height : 28.8px;
+            padding     : 0 40px;
+            text-align  : justify;
+        }
+    
+        .home_link a {
+            font-size       : 13px;
+            line-height     : 18.75px;
+            padding-top     : 14px;
+            padding-left    : 14px;
+            padding-bottom  : 14px;
+        }
+    
+        .home_link img {
+            margin-top      : -3px;
+            margin-left     : 6px;
+            padding-right   : 20px;
+        }
+    
+        .home_link {
+            margin-top  : 35px;
+        }
+    
+    /*================ mission responsive css area start ===================*/
+        #mission {
+            padding-top     : 40px;
+            padding-bottom  : 40px;
+        }
+    
+        .mission_header h3 {
+            margin-bottom   : 0;
+            font-size       : 24px;
+            text-align      : center;
+        }
+    
+        .mission_button button {
+            font-size       : 13px;
+            padding-top     : 14px;
+            padding-left    : 14px;
+            padding-bottom  : 14px;
+            outline         : none;
+            border          : none;
+            margin-bottom   : 20px;
+        }
+    
+        .mission_button img {
+            padding-right   : 20px;
+        }
+    
+        .mission_button {
+            text-align  : center !important;
+        }
+    
+        .mission_play_btn {
+            top         : 40%;
+            left        : 50%;
+            transform   : translateX(-50%);
+        }
+    
+        .mission_header_text {
+            margin-left : 10px;
+            margin-top  : 20px;
+        }
+    
+        .mission_header_text h3 {
+            font-size       : 25px;
+            text-align      : center;
+            margin-bottom   : 0;
+        }
+    
+        .mission_header_text p {
+            font-size       : 13px;
+            line-height     : 23.8px;
+            padding         : 0 50px;
+            text-align      : justify;
+        }
+    
+        .mantions_left_items h4 {
+            font-size       : 26px;
+            margin-top      : 20px;
+            margin-bottom   : 10px;
+        }
+    
+        .mantions_left_items p {
+            font-size   : 13px;
+        }
+    
+        .mantions_left_items {
+            padding-top     : 35px;
+            padding-bottom  : 35px;
+        }
+    
+    /*================ mantsion responsive css area start ===================*/
+        #mantsion {
+            padding-bottom  : 10px;
+        }
+    
+        .mantsion_right_text {
+            margin-top  : 0px;
+            margin-left : 0px;
+        }
+    
+        .mantsion_right_text h2 {
+            font-size       : 24px;
+            text-align      : center;
+            margin-bottom   : 0;
+        }
+    
+        .mantsion_right_text p {
+            font-size       : 13px;
+            line-height     : 25.8px;
+            padding-bottom  : 30px;
+            padding-left    : 50px;
+            padding-right   : 50px;
+            text-align      : justify;
+        }
+    
+        .mantsion_right {
+            text-align : center;
+        }
+    
+        .mantsion_right span {
+            font-size       : 13px;
+            line-height     : 18.75px;
+            padding-top     : 14px;
+            padding-left    : 14px;
+            padding-bottom  : 14px;
+        }
+    
+        .mantsion_right_text img {
+            margin-top      : -3px;
+            padding-right   : 14px;
+        }
+    
+     /*================ Team responsive css area start ===================*/
+        #team {
+            padding-top     : 20px;
+            padding-bottom  : 10px;
+        }
+    
+        .team_content h2 {
+            margin-bottom   : 0;
+            font-size       : 26px;
+            text-align      : center;
+        }
+    
+        .team_content {
+            margin-top  : 20px;
+        }
+    
+        .team_content p {
+            font-size       : 13px;
+            padding         : 0 50px;
+            margin-bottom   : 40px;
+        }
+    
+        .team_content_btn {
+            text-align      : center;
+            margin-bottom   : 30px;
+        }
+    
+        .team_content_btn span {
+            font-size       : 13px;
+            padding-top     : 14px;
+            padding-left    : 14px;
+            padding-bottom  : 14px;
+        }
+    
+        .team_content_btn img {
+            margin-top      : -1px;
+            padding-right   : 14px;
+        }
+    
+        .team_img_overly {
+            opacity : 1;
+        }
+    
+     /*================ winning responsive css area start ===================*/
+        #winning {
+            padding-top     : 0px;
+            padding-bottom  : 0px;
+        }
+    
+        .winning_header h2 {
+            font-size       : 24px;
+            margin-bottom   : 0px;
+        }
+    
+        .winning_header p {
+            font-size       : 13px;
+            line-height     : 27.8px;
+            margin-bottom   : 30px;
+            padding         : 0 50px;
+            text-align      : justify;
+        }
+    
+     /*================ partner responsive css area start ===================*/
+        #partner {
+            padding-top     : 30px;
+            padding-bottom  : 0px;
+        }
+    
+        .partner_header h3 {
+            font-size       : 26px;
+            margin-bottom   : 26px;
+        }
+    
+        .partner_images {
+            margin-bottom   : 46px;
+            text-align      : center;
+        }
+    
+    /*================ footer responsive css area start ===================*/
+        #footer {
+            padding-top     : 40px;
+            padding-bottom  : 60px;
+        }
+    
+        .foot_logo {
+            margin-bottom   : 30px;
+        }
+    
+        .footer_menu a {
+            font-size   : 13px;
+            line-height : 30px;
+            padding     : 0 12px;
+        }
+    
+        .footer_menu {
+            margin-bottom   : 50px;
+        }
+    
+        .footer_contact {
+            text-align  : center;
+        }
+    
+        .footer_contact h5 {
+            font-size       : 18px;
+            line-height     : 20px;
+            padding-bottom  : 10px;
+        }
+    
+        .footer_contact span {
+            font-size   : 24px;
+        }
+    
+        .footer_contact p {
+            text-align      : justify;
+            font-size       : 13px;
+            padding-top     : 10px;
+            padding-left    : 50px;
+            padding-right   : 50px;
+        }
+    
+        .footer_address h5 {
+            font-size       : 20px;
+            padding-bottom  : 5px;
+        }
+    
+        .footer_address {
+            margin-left     : 50px;
+            margin-bottom   : 30px;
+        }
+    
+        .footer_address p {
+            font-size       : 13px;
+            margin-bottom   : 2px;
+        }
+    
+        .footer_news {
+           margin-left  : 50px;
+        }
+    
+        .footer_news a {
+            font-size   : 13px;
+            display     : block;
+            line-height : 26px;
+        }
+    
+    /*================ copyright responsive css area start ===================*/
+    #copyright {
+        padding-top     : 40px;
+        padding-bottom  : 40px;
+    }
+    
+    .copy_text p {
+        font-size   : 13px;
+        text-align  : center;
+    }
+    
+    .copy_icons {
+        text-align  : center !important;
+        margin-top  : 10px;
+    }
+    
+    .copy_icons i {
+        font-size   : 18px;
+        margin      : 0 8px;
+    }
+    
+    #scroll_top_bottom_buttom {
+        right       : 20px;
+        bottom      : 55px;
+        width       : 30px;
+        height      : 30px;
+        line-height : 30px;
+        font-size   : 14px;
+    }
+    
+    }
+    
+    /* ================ small device responsive css area start ===================*/
+    @media ( min-width: 576px ) and ( max-width: 767.99px) {
+    
+    /*================ navbar responsive css area start ===================*/
+    .navbar-brand img {
+        width   : 100px;
+     }
+    
+     .navbar > .container, .navbar > .container-fluid, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container-xl, .navbar > .container-xxl {
+         margin : 0 10px;
+     }
+    
+     .nav_button {
+         display : none;
+     }
+    
+     .search {
+         display : none;
+     }
+    
+     .navbar-toggler {
+         color   : #fff;
+         border  : 2px solid #ddd;
+     }
+    
+     .navbar-toggler:focus {
+         box-shadow  : 0 0 0 transparent;
+     }
+    
+     .navbar-nav .nav-item {
+         padding     : 5px 8px;
+         text-align  : center;
+     }
+    
+    /*================ banner responsive css area start ===================*/
+     #banner {
+         margin : 0 10px !important;
+     }
+    
+     .bann_header h1 {
+         font-size       : 20px;
+         padding-top     : 10px;
+         padding-bottom  : 10px;
+     }
+    
+    /*================ about responsive css area start ===================*/
+     #about {
+         padding-top    : 15px;
+         padding-bottom : 50px;
+     }
+    
+     .img-fluid {
+         margin-top  : 20px;
+     }
+    
+     .abu_play_button img {
+         top     : -30px;
+         left    : 50%;
+     }
+    
+     .about_right_content {
+         padding-top     : 14px;
+         padding-left    : 0px;
+     }
+    
+     .abut_text h2 {
+         font-size   : 25px;
+         text-align  : center;
+         line-height : 35px;
+    
+     }
+    
+     .abut_text p {
+         font-size       : 13px;
+         line-height     : 22.8px;
+         padding-bottom  : 5px;
+         text-align      : justify;
+         padding         : 0 50px;
+     }
+    
+     .about_icons{
+         margin-left : 30px;
+     }
+    
+     .about_icons p {
+         font-size   : 13px;
+         line-height : 18.8px;
+     }
+    
+     .about_button {
+         text-align  : center;
+     }
+    
+     .about_button span {
+         font-size       : 13px;
+         line-height     : 18.75px;
+         padding-top     : 14px;
+         padding-left    : 14px;
+         padding-bottom  : 14px;
+     }
+    
+     .about_button img {
+         margin-top      : -4px;
+         margin-left     : 9px;
+         padding-right   : 19px;
+     }
+    
+     .about_button button {
+         margin-top  : 30px;
+     }
+    
+     .about_count_items1 h3 {
+         font-size   : 50px;
+         line-height : 65.75px;
+         text-align  : center;
+     }
+    
+     .about_count_items1 i {
+         font-size   : 20px;
+         right        : 12px;
+     }
+    
+     .about_count_items1 p {
+         font-size   : 13px;
+         text-align  : center;
+     }
+    
+     .about_count_items2 h3 {
+         font-size   : 50px;
+         line-height : 65.75px;
+         text-align  : center;
+         margin-left : 0;
+     }
+    
+     .about_count_items2 i {
+         font-size   : 20px;
+         right       : 10px;
+     }
+    
+     .about_count_items2 p {
+         font-size   : 13px;
+         text-align  : center;
+     }
+    
+     .about_count_items3 h3 {
+         font-size   : 50px;
+         line-height : 65.75px;
+         text-align  : center;
+     }
+    
+     .about_count_items3 i {
+         font-size   : 20px;
+         left        : 181px;
+     }
+    
+     .about_count_items3 p {
+         font-size   : 13px;
+         text-align  : center;
+     }
+    
+     .about_count_items4 h3 {
+         font-size   : 50px;
+         line-height : 65.75px;
+         text-align  : center;
+     }
+    
+     .about_count_items4 i {
+         font-size   : 20px;
+         left        : 181px;
+     }
+    
+     .about_count_items4 p {
+         font-size   : 13px;
+         text-align  : center;
+     }
+    
+     .abu_main {
+         margin-top  : 60px;
+     }
+    
+    /*================ home  responsive css area start ===================*/
+     #home {
+         padding-top     : 50px;
+         padding-bottom  : 50px;
+         margin          : 0 10px !important;
+     }
+    
+     .home_content {
+         padding-top     : 10px;
+         padding-left    : 10px;
+         padding-right   : 10px;
+         padding-bottom  : 24px;
+     }
+    
+     .home_content h3 {
+         font-size       : 17px;
+         line-height     : 59.9px;
+         margin-bottom   : 0px;
+     }
+    
+     .home_content p {
+         font-size      : 13px;
+         line-height    : 28.8px;
+         padding        : 0 40px;
+         text-align     : justify;
+     }
+    
+     .home_link a {
+         font-size       : 13px;
+         line-height     : 18.75px;
+         padding-top     : 14px;
+         padding-left    : 14px;
+         padding-bottom  : 14px;
+     }
+    
+     .home_link img {
+         margin-top      : -3px;
+         margin-left     : 6px;
+         padding-right   : 20px;
+     }
+    
+     .home_link {
+         margin-top  : 35px;
+     }
+    
+    /*================ mission responsive css area start ===================*/
+     #mission {
+         padding-top     : 40px;
+         padding-bottom  : 40px;
+     }
+    
+     .mission_header h3 {
+         margin-bottom   : 0;
+         font-size       : 24px;
+         text-align      : center;
+     }
+    
+     .mission_button button {
+         font-size       : 13px;
+         padding-top     : 14px;
+         padding-left    : 14px;
+         padding-bottom  : 14px;
+         outline         : none;
+         border          : none;
+         margin-bottom   : 20px;
+     }
+    
+     .mission_button img {
+         padding-right   : 20px;
+     }
+    
+     .mission_button {
+         text-align : center !important;
+     }
+    
+     .mission_play_btn {
+         top         : 40%;
+         left        : 50%;
+         transform   : translateX(-50%);
+     }
+    
+     .mission_header_text {
+         margin-left    : 10px;
+         margin-top     : 20px;
+     }
+    
+     .mission_header_text h3 {
+         font-size       : 25px;
+         text-align      : center;
+         margin-bottom   : 0;
+     }
+    
+     .mission_header_text p {
+         font-size       : 13px;
+         line-height     : 23.8px;
+         padding         : 0 50px;
+         text-align      : justify;
+     }
+    
+     .mantions_left_items h4 {
+         font-size      : 26px;
+         margin-top     : 20px;
+         margin-bottom  : 10px;
+     }
+    
+     .mantions_left_items p {
+         font-size  : 13px;
+     }
+    
+     .mantions_left_items {
+         padding-top     : 35px;
+         padding-bottom  : 35px;
+     }
+    
+    /*================ mantsion responsive css area start ===================*/
+     #mantsion {
+         padding-bottom  : 10px;
+     }
+    
+     .mantsion_right_text {
+         margin-top  : 0px;
+         margin-left : 0px;
+     }
+    
+     .mantsion_right_text h2 {
+         font-size       : 24px;
+         text-align      : center;
+         margin-bottom   : 0;
+     }
+    
+     .mantsion_right_text p {
+         font-size       : 13px;
+         line-height     : 25.8px;
+         padding-bottom  : 30px;
+         padding-left    : 50px;
+         padding-right   : 50px;
+         text-align      : justify;
+     }
+    
+     .mantsion_right {
+         text-align : center;
+     }
+    
+     .mantsion_right span {
+         font-size       : 13px;
+         line-height     : 18.75px;
+         padding-top     : 14px;
+         padding-left    : 14px;
+         padding-bottom  : 14px;
+     }
+    
+     .mantsion_right_text img {
+         margin-top      : -3px;
+         padding-right   : 14px;
+     }
+    
+    /*================ Team responsive css area start ===================*/
+     #team {
+         padding-top     : 20px;
+         padding-bottom  : 10px;
+     }
+    
+     .team_content h2 {
+         margin-bottom   : 0;
+         font-size       : 26px;
+         text-align      : center;
+     }
+    
+     .team_content {
+         margin-top  : 20px;
+     }
+    
+     .team_content p {
+         font-size       : 13px;
+         padding         : 0 50px;
+         margin-bottom   : 40px;
+     }
+    
+     .team_content_btn {
+         text-align      : center;
+         margin-bottom   : 30px;
+     }
+    
+     .team_content_btn span {
+         font-size       : 13px;
+         padding-top     : 14px;
+         padding-left    : 14px;
+         padding-bottom  : 14px;
+     }
+    
+     .team_content_btn img {
+         margin-top      : -1px;
+         padding-right   : 14px;
+     }
+    
+     .team_img_overly {
+         opacity: 1;
+     }
+    
+    /*================ winning responsive css area start ===================*/
+     #winning {
+         padding-top     : 0px;
+         padding-bottom  : 0px;
+     }
+    
+     .winning_header h2 {
+         font-size       : 24px;
+         margin-bottom   : 0px;
+     }
+    
+     .winning_header p {
+         font-size       : 13px;
+         line-height     : 27.8px;
+         margin-bottom   : 30px;
+         padding         : 0 50px;
+         text-align      : justify;
+     }
+    
+    /*================ partner responsive css area start ===================*/
+     #partner {
+         padding-top     : 30px;
+         padding-bottom  : 0px;
+     }
+    
+     .partner_header h3 {
+         font-size       : 26px;
+         margin-bottom   : 26px;
+     }
+    
+     .partner_images {
+         margin-bottom   : 46px;
+         text-align      : center;
+     }
+    
+    /*================ footer responsive css area start ===================*/
+     #footer {
+         padding-top     : 40px;
+         padding-bottom  : 60px;
+     }
+    
+     .foot_logo {
+         margin-bottom   : 30px;
+     }
+    
+     .footer_menu a {
+         font-size   : 13px;
+         line-height : 30px;
+         padding     : 0 12px;
+     }
+    
+     .footer_menu {
+         margin-bottom   : 50px;
+     }
+    
+     .footer_contact {
+         text-align  : center;
+     }
+    
+     .footer_contact h5 {
+         font-size       : 18px;
+         line-height     : 20px;
+         padding-bottom  : 10px;
+     }
+    
+     .footer_contact span {
+         font-size  : 24px;
+     }
+    
+     .footer_contact p {
+         text-align      : justify;
+         font-size       : 13px;
+         padding-top     : 10px;
+         padding-left    : 50px;
+         padding-right   : 50px;
+     }
+    
+     .footer_address h5 {
+         font-size      : 20px;
+         padding-bottom : 5px;
+     }
+    
+     .footer_address {
+         margin-left     : 100px;
+         margin-bottom   : 30px;
+     }
+    
+     .footer_address p {
+         font-size       : 13px;
+         margin-bottom   : 2px;
+     }
+    
+     .footer_news {
+        margin-left  : 100px;
+     }
+    
+     .footer_news a {
+         font-size   : 13px;
+         display     : block;
+         line-height : 26px;
+     }
+    
+    /*================ copyright responsive css area start ===================*/
+    #copyright {
+     padding-top     : 40px;
+     padding-bottom  : 40px;
+    }
+    
+    .copy_text p {
+     font-size   : 13px;
+     text-align  : center;
+    }
+    
+    .copy_icons {
+     text-align  : center !important;
+     margin-top  : 10px;
+    }
+    
+    .copy_icons i {
+     font-size   : 18px;
+     margin      : 0 8px;
+    }
+    
+    #scroll_top_bottom_buttom {
+     right          : 20px;
+     bottom         : 55px;
+     width          : 30px;
+     height         : 30px;
+     line-height    : 30px;
+     font-size      : 14px;
+    }
+    
+    }
+    
+    /*================ medium  device responsive css area start ===================*/
+    @media ( min-width: 768px ) and ( max-width: 991.99px) {
+    
+    /*================ Navbar responsive css area start ===================*/
+        .nav_button {
+            display : none;
+        }
+    
+        .search {
+            display : none;
+        }
+    
+        .navbar-toggler {
+            color   : #fff;
+            border  : 2px solid #ddd;
+        }
+    
+        .navbar-toggler:focus {
+            box-shadow  : 0 0 0 transparent;
+        }
+    
+        .navbar-nav .nav-item {
+            padding     : 5px 8px;
+            text-align  : center;
+        }
+    
+    /*================ banner responsive css area start ===================*/
+        #banner {
+            margin  : 0 10px !important;
+        }
+    
+        .bann_header h1 {
+            font-size       : 40px;
+            padding-top     : 40px;
+            padding-bottom  : 40px;
+        }
+    /*================ about responsive css area start ===================*/
+        #about {
+            padding-top     : 120px;
+            padding-bottom  : 100px;
+        }
+    
+        .abut_text {
+            text-align  : center;
+        }
+    
+        .abut_text h2 {
+            font-size       : 50px;
+            margin-bottom   : 0;
+        }
+    
+        .abut_text p {
+            font-size   : 13px;
+        }
+    
+        .about_icons {
+            margin-left : 60px;
+        }
+    
+        .about_button button {
+            margin-top  : 50px;
+            margin-left : 60px;
+        }
+    
+        .about_button span {
+            font-size       : 14px;
+            padding-top     : 20px;
+            padding-left    : 30px;
+            padding-bottom  : 20px;
+        }
+    
+        .about_button img {
+            margin-top      : -5px;
+            padding-right   : 30px;
+        }
+    
+        .abu_main {
+            margin-top  : 85px;
+        }
+    
+        .about_count_items1 {
+            text-align  : center;
+        }
+    
+        .about_count_items1 i {
+            left    : 205px;
+        }
+    
+        .about_count_items2 {
+            text-align  : center;
+        }
+    
+        .about_count_items2 h3 {
+            margin-left : 0;
+        }
+    
+        .about_count_items2 i {
+            left    : 205px;
+        }
+    
+        .about_count_items3 {
+            text-align  : center;
+        }
+    
+        .about_count_items3 i {
+            right   : 95px;
+        }
+    
+        .about_count_items4 i {
+            right   : 130px;
+        }
+    
+    /*================ home responsive css area start ===================*/
+        #home {
+            padding-top     : 90px;
+            padding-bottom  : 90px;
+        }
+    
+        .home_content {
+            padding-top     : 40px;
+            padding-left    : 0;
+            padding-right   : 0;
+            padding-bottom  : 70px;
+        }
+    
+        .home_content h3 {
+            font-size       : 42px;
+            margin-bottom   : 4px;
+        }
+    
+        .home_content p {
+            font-size   : 15px;
+            padding     : 0 60px;
+        }
+    
+        .home_link a {
+            font-size       : 14px;
+            padding-top     : 20px;
+            padding-left    : 30px;
+            padding-bottom  : 20px;
+        }
+    
+        .home_link img {
+            margin-top      : -5px;
+            padding-right   : 30px;
+        }
+    
+    /*================ mission responsive css area start ===================*/
+        #mission {
+            padding-top     : 120px;
+            padding-bottom  : 120px;
+        }
+    
+        .mission_header h3 {
+            font-size       : 44px;
+            margin-bottom   : 80px;
+        }
+    
+        .mission_button button {
+            font-size       : 14px;
+            padding-top     : 20px;
+            padding-left    : 30px;
+            padding-bottom  : 20px;
+            border          : none;
+        }
+    
+        .mission_button img {
+            margin-top      : -5px;
+            padding-right   : 30px;
+        }
+    
+        .mission_header_text p {
+            font-size: 15px;
+        }
+    
+        .mission_border {
+            display : none;
+        }
+    
+    /*================ mantsion responsive css area start ===================*/
+        #mantsion {
+            padding-bottom  : 0;
+        } 
+        .mantsion_right_text {
+            text-align  : center;
+            margin-top  : 40px;
+            margin-left : 0;
+        }
+    
+        .mantsion_right_text h2 {
+            font-size   : 44px;
+            line-height : 60.9px;
+        }
+    
+        .mantsion_right_text p {
+            font-size       : 15px;
+            padding-bottom  : 60px;
+            padding-left    : 60px;
+            padding-right   : 60px;
+        }
+    
+        .mantsion_right span {
+            font-size       : 14px;
+            padding-top     : 20px;
+            padding-left    : 30px;
+            padding-bottom  : 20px;
+            border          : none;
+        }
+        .mantsion_right img {
+            margin-top      : -5px;
+            padding-right   : 30px;
+        }
+    
+    /*================ team responsive css area start ===================*/
+        #team {
+            padding-top     : 74px;
+            padding-bottom  : 74px;
+        }
+    
+        .team_content {
+            margin-top  : 40px;
+            text-align  : center;
+        }
+    
+        .team_content h2 {
+            font-size   : 44px;
+        }
+    
+        .team_content p {
+            font-size       : 14px;
+            padding         : 0 90px;
+            margin-bottom   : 0;
+        }
+    
+        .team_content_btn {
+            margin  : 60px 0;
+        }
+    
+        .team_content_btn span {
+            font-size       : 14px;
+            padding-top     : 20px;
+            padding-left    : 30px;
+            padding-bottom  : 20px;
+            border          : none;
+        }
+        .team_content_btn img {
+            margin-top      : -5px;
+            padding-right   : 30px;
+        }
+    
+    /*================ winning responsive css area start ===================*/
+        #winning {
+            padding-top     : 0;
+            padding-bottom  : 0;
+        }
+    
+        .winning_header h2 {
+            font-size   : 45px;
+        }
+    
+        .winning_header p {
+            font-size       : 14px;
+            margin-bottom   : 70px;
+            padding         : 0 110px;
+        }
+    
+        .winning_images {
+            margin-bottom   : 24px;
+        }
+    
+    /*================ partner responsive css area start ===================*/
+        #partner {
+            padding-top     : 80px;
+            padding-bottom  : 30px;
+        }
+    
+        .partner_header h3 {
+            font-size       : 44px;
+            margin-bottom   : 50px;
+        }
+    
+    /*================ footer responsive css area start ===================*/
+        #footer {
+            padding-top     : 60px;
+            padding-bottom  : 90px;
+        }
+    
+        .foot_logo {
+            margin-bottom   : 40px;
+        }
+    
+        .footer_menu {
+            margin-bottom   : 90px;
+        }
+    
+        .footer_contact span {
+            font-size   : 28px;
+        }
+    
+        .footer_contact p {
+            font-size   : 14px;
+        }
+    
+        .footer_address {
+            margin-left : 0;
+            text-align  : center;
+        }
+    
+        .footer_address p {
+            font-size   : 15px;
+        }
+    
+        .footer_news {
+            text-align  : center;
+            margin-top  : 20px;
+        }
+        .footer_news h4 {
+           padding-bottom   : 0;
+        }
+    
+        .footer_news a {
+            font-size   : 14px;
+        }
+    
+    /*================ copyright responsive css area start ===================*/
+        .copy_text p {
+            font-size   : 16px;
+        }
+    
+        .copy_icons i {
+            font-size   : 22px;
+        }
+    
+        #scroll_top_bottom_buttom {
+            right       : 14px;
+            bottom      : 75px;
+            width       : 40px;
+            height      : 40px;
+            line-height : 40px;
+            font-size   : 18px;
+        }
+    
+    }
+    
+    /*================ large  device responsive css area start ===================*/
+    @media ( min-width: 992px ) and ( max-width: 1199.99px) {
+    
+    /*================ navbar responsive css area start ===================*/
+        .navbar-nav .nav-item {
+            padding : 42px 15px;
+        }
+    
+        .navbar-nav .nav-item .nav-link {
+            font-size   : 16px;
+        }
+    
+        .search i {
+            margin-left : 12px;
+        }
+    
+        .nav_button a {
+            padding-left    : 23px;
+            padding-top     : 18px;
+            padding-bottom  : 18px;
+            font-size       : 13px;
+        }
+    
+    /*================ banner responsive css area start ===================*/
+        .bann_header h1 {
+            font-size       : 56px;
+            padding-top     : 170px;
+            padding-bottom  : 170px;
+        }
+    
+    /*================ about responsive css area start ===================*/
+        .abut_text h2 {
+            font-size       : 58px;
+            margin-bottom   : 0;
+        }
+    
+        .about_right_content {
+            padding-top     : 20px;
+            padding-left    : 8px;
+        }
+    
+        .abut_text p {
+            font-size   : 13px;
+        }
+    
+        .about_icons p {
+            font-size   : 13px;
+            line-height : 20.8px;
+        }
+    
+        .about_button button {
+            margin-top  : 40px;
+        }
+    
+        .about_button span {
+            font-size       : 13px;
+            padding-top     : 18px;
+            padding-left    : 23px;
+            padding-bottom  : 18px;
+        }
+    
+        .about_button img {
+            padding-right   : 23px;
+        }
+    
+        .abu_main {
+            margin-top  : 160px;
+        }
+    
+        .about_count_items3 i {
+            right   : 36px;
+        }
+    
+        .about_count_items4 i {
+            right   : 70px;
+        }
+    
+    /*================ Home responsive css area start ===================*/
+        .home_content h3 {
+            font-size       : 55px;
+            margin-bottom   : 0;
+        }
+    
+        .home_content p {
+            font-size   : 13px;
+            line-height : 23.8px;
+            padding     : 0 18px;
+        }
+    
+        .home_link a {
+            font-size       : 13px;
+            padding-top     : 18px;
+            padding-left    : 23px;
+            padding-bottom  : 18px;
+        }
+    
+        .home_link img {
+            padding-right   : 23px;
+        }
+    
+    /*================ mission responsive css area start ===================*/
+        .mission_header h3 {
+            font-size   : 58px;
+        }
+    
+        .mission_button button {
+            font-size       : 13px;
+            padding-top     : 18px;
+            padding-left    : 23px;
+            padding-bottom  : 18px;
+            border          : none;
+        }
+    
+        .mission_button button img {
+            padding-right   : 23px;
+        }
+    
+        .mission_play_btn {
+            top         : 40%;
+            left        : 50%;
+            transform   : translateX(-50%);
+        }
+    
+        .mission_header_text {
+            margin-left : 35px;
+        }
+    
+        .mission_header_text h3 {
+            font-size       : 32px;
+            margin-bottom   : 0;
+        }
+    
+        .mission_header_text p {
+            font-size       : 13px; 
+            padding-top     : 0;
+            margin-bottom   : 0;
+        }
+    
+        .mission_icons p {
+            line-height: 28.8px;
+        }
+    
+        .mission_border {
+            right: -22px;
+        }
+    
+    /*================  Mantsion responsive css area start ===================*/
+        .mantions_left_items h4 {
+            font-size   : 26px;
+            line-height : 30px;
+        }
+    
+        .mantions_left_items p {
+            font-size   : 14px;
+        }
+    
+        .mantions_left_items {
+            padding-top : 44px;
+        }
+    
+        .mantsion_right_text {
+            margin-top  : 55px;
+            margin-left : 35px;
+        }
+    
+        .mantsion_right_text h2 {
+            font-size       : 52px;
+            margin-bottom   : 0;
+        }
+    
+        .mantsion_right_text p {
+            font-size       : 13px;
+            padding-bottom  : 60px;
+        }
+    
+        .mantsion_right span {
+            font-size       : 13px;
+            padding-top     : 18px;
+            padding-left    : 23px;
+            padding-bottom  : 18px;
+            border          : none;
+        }
+    
+        .mantsion_right img {
+            padding-right   : 23px;
+        }
+    
+    /*================ team responsive css area start ===================*/
+        .team_content h2 {
+            font-size   : 58px;
+        } 
+    
+        .team_content p {
+            font-size   : 13px;
+        }
+    
+        .team_content_btn span {
+            font-size       : 13px;
+            padding-top     : 18px;
+            padding-left    : 23px;
+            padding-bottom  : 18px;
+            border          : none;
+        }
+    
+        .team_content_btn img {
+            padding-right   : 23px;
+        }
+    
+        .team_overly_text h4 {
+            font-size       : 22px;
+            line-height     : 22px;
+            margin-bottom   : 4px;
+        }
+    
+        .team_overly_text p {
+            font-size       : 18px;
+            margin-bottom   : 0;
+        }
+    
+        .team_overly_text i {
+            font-size   : 16px;
+            padding     : 0 8px;
+        }
+    
+    /*================ Winning responsive css area start ===================*/
+        .winning_header h2 {
+            font-size   : 58px;
+        }
+    
+        .winning_header p {
+            font-size   : 13px;
+            padding     : 0 180px;
+        }
+    
+        .winner_images_text p {  
+            font-size   : 16px;
+        }
+    
+    /*================ Partner responsive css area start ===================*/
+        .partner_header h3 {
+            font-size       : 54px;
+            margin-bottom   : 60px;
+        }
+    
+        .partner_images {
+            margin-bottom   : 100px;
+        }
+    
+        .partner_images img {
+            width   : 130px;
+        }
+    
+    /*================ footer responsive css area start ===================*/
+        .foot_logo {
+            margin-bottom   : 45px;
+        }
+    
+        .footer_menu a {
+            font-size   : 17px;
+            padding     : 0 14px;
+        }
+    
+        .footer_menu {
+            margin-bottom   : 90px;
+        }
+    
+        .footer_contact p {
+            font-size   : 13px;
+        }
+    
+        .footer_address p {
+            font-size   : 13px;
+        }
+    
+        .footer_news a {
+            font-size       : 12px;
+            margin-right    : 35px;
+        }
+    
+    /*================ copyright responsive css area start ===================*/
+        .copy_text p {
+            font-size   : 13px;
+        }
+    
+        .copy_icons i {
+            font-size   : 20px;
+        }
+    
+        #scroll_top_bottom_buttom {
+            bottom  : 75px;
+            right   : 10px;
+        }
+    
+    }
+    
+    /*================ XL large  device responsive css area start ===================*/
+    @media ( min-width: 1200px ) and ( max-width: 1399.99px) {
+    
+    /*================ about responsive css area start ===================*/
+        .abut_text p {
+            font-size       : 16px;
+            padding-bottom  : 0px;
+        }
+    
+        .about_icons p {
+            font-size       : 16px;
+            margin-bottom   : 8px;
+        }
+    
+        .about_button button {
+            margin-top  : 70px;
+        }
+    
+        .about_button span {
+            font-size   : 13px;
+        }
+    
+        .about_count_items3 i {
+            right   : 60px;
+        }
+    
+        .about_count_items4 i {
+            right   : 95px;
+        }
+    
+    /*================ home responsive css area start ===================*/
+        .home_content p {
+            font-size   : 14px;
+        }
+    
+    /*================ mission responsive css area start ===================*/
+        .mission_button button {
+            border  : none;
+        }
+    
+        .mission_border {
+            right   : -30px;
+        }
+    
+        .mission_header_text p {
+            font-size   : 15px;
+        }
+    
+        .mission_icons p {
+            margin-bottom   : 8px;
+        }
+    
+    /*================ Mantsion responsive css area start ===================*/
+        .mantions_left_items h4 {
+            font-size   : 28px;
+            margin-top  : 20px;
+        }
+    
+        .mantions_left_items p {
+            font-size   : 16px;
+        }
+    
+        .mantsion_right_text {
+            margin-left : 40px;
+        }
+    
+        .mantsion_right_text h2 {
+            font-size   : 61px;
+        }
+    
+        .mantsion_right_text p {
+            font-size       : 15px;
+            padding-bottom  : 50px;
+        }
+    
+    /*================ team responsive css area start ===================*/
+        .team_content p {
+            font-size: 16px;
+        }
+        
+        .team_overly_text h4 {
+            font-size       : 22px;
+            line-height     : 22px;
+            margin-bottom   : 4px;
+        }
+    
+        .team_overly_text p {
+            font-size       : 18px;
+            margin-bottom   : 0;
+        }
+    
+        .team_overly_text i {
+            font-size   : 16px;
+            padding     : 0 8px;
+        }
+    
+    /*================ Winning responsive css area start ===================*/
+        .winning_header p {
+            font-size   : 15px;
+        }
+    
+    /*================ Partner responsive css area start ===================*/
+    .partner_images img {
+        width   : 150px;
+    }
+    
+    /*================ footer responsive css area start ===================*/
+        .footer_contact p {
+            font-size   : 14px;
+        }
+    
+        .footer_address p {
+            font-size   : 17px;
+        }
+    
+        .footer_news a {
+            font-size   : 15px;
+        }
+    
+        #scroll_top_bottom_buttom {
+            right   : 10px;
+            bottom  : 70px;
+        }
+    
+    }
+    
+    /* ================ XXL large  device responsive css area start ===================*/
+    @media ( min-width: 1400px ) {
+    
+    /*================ Mission responsive css area start ===================*/
+        .mission_button button {
+            border  : none;
+        }
+        #scroll_top_bottom_buttom {
+            right   : 10px;
+            bottom  : 70px;
+        }
+    } 
