@@ -1391,7 +1391,7 @@ include("config.php");
             <div class="col-12 col-sm-6 col-md-3">
                 <a href="goa.php" class="city-link">
                     <div class="cities">
-                        <img src="images/cities/goa.png" alt="Under Construction">
+                        <img src="images/cities/goa.jpg" alt="Under Construction">
                         <div class="cities-overlay">Goa</div>
                     </div>
                 </a>

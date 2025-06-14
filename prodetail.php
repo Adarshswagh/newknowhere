@@ -29,6 +29,7 @@ while ($similar_row = mysqli_fetch_array($similar_query)) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

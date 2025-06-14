@@ -375,7 +375,7 @@ include("config.php");
 
 .banner {
     position: relative;
-    height: 200px;
+    height: 350px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -399,7 +399,7 @@ include("config.php");
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.73);
+    background-color: rgba(0, 0, 0, 0.01);
     z-index: 1;
 }
 
@@ -467,14 +467,14 @@ include("config.php");
 <!-- banner -->
 <section id="banner-main">
     <div class="banner">
-        <img src="images/banner/5.png" alt="Banner" class="banner-img">
-        <div class="banner-content">
+        <img src="images/banner/nagpur.png" alt="Banner" class="banner-img">
+        <!-- <div class="banner-content">
             <h2>Nagpur Projects List</h2>
             <p class="banner-bread">
                 <a href="index.php">Home</a> &gt; 
                 <a href="#">Nagpur Projects List</a>
             </p>
-        </div>
+        </div> -->
     </div>
 </section>
 <!--end banner -->
