@@ -158,17 +158,17 @@ require_once __DIR__ . '/auth.php';
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="wishlist.php" class="navbar-wishlist"><i class="fas fa-heart"></i> WISHLIST</a></li>
 
-    <li class="dropdown">
-        <?php if (isLoggedIn()): ?>
-            <a href="profile.php" class="navbar-login logged-in"><i class="fas fa-user"></i> <?php echo $_SESSION['user_name']; ?></a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-menu-a" href="profile.php">Profile</a></li>
-                <li><a class="dropdown-menu-a" href="logout.php">Logout</a></li>
-            </ul>
-        <?php else: ?>
-            <a href="login.php" class="navbar-login"><i class="fas fa-user"></i> LOGIN</a>
-        <?php endif; ?>
-    </li>
+                    <li class="dropdown">
+                        <?php if (isLoggedIn()): ?>
+                            <i class="fas fa-user"></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-menu-a" href="profile.php">Profile</a></li>
+                                <li><a class="dropdown-menu-a" href="logout.php">Logout</a></li>
+                            </ul>
+                        <?php else: ?>
+                            <a href="login.php" class="navbar-login"><i class="fas fa-user"></i> LOGIN</a>
+                        <?php endif; ?>
+                    </li>
                 </ul>
             </div>
         </div>
