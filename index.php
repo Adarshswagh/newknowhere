@@ -1147,17 +1147,39 @@ include("config.php");
 
 <div class="property-input-group">
     <select name="budget" id="budget" class="property-input">
-        <option value="">Select maximum budget</option>
-        <option value="500000">Up to ₹5 Lakhs</option>
-        <option value="1000000">Up to ₹10 Lakhs</option>
-        <option value="2000000">Up to ₹20 Lakhs</option>
-        <option value="3000000">Up to ₹30 Lakhs</option>
-        <option value="5000000">Up to ₹50 Lakhs</option>
-        <option value="10000000">Up to ₹1 Crore</option>
-        <option value="20000000">Up to ₹2 Crore</option>
-        <option value="50000000">Up to ₹5 Crore</option>
-        <option value="50000001">Above ₹5 Crore</option>
-    </select>
+    <option value="">Select maximum budget</option>
+
+    <!-- 50 Lakh to 1 Crore with 10 Lakh Gap -->
+    <optgroup label="₹50 Lakh - ₹1 Crore">
+        <option value="5000000">₹50 Lakhs</option>
+        <option value="6000000">₹60 Lakhs</option>
+        <option value="7000000">₹70 Lakhs</option>
+        <option value="8000000">₹80 Lakhs</option>
+        <option value="9000000">₹90 Lakhs</option>
+        <option value="10000000">₹1 Crore</option>
+    </optgroup>
+
+    <!-- 1 Crore to 5 Crore with 20 or 30 Lakh Gap -->
+    <optgroup label="₹1 Crore - ₹5 Crore">
+        <option value="10000000">₹1 Crore</option>
+        <option value="12000000">₹1.20 Crore</option>
+        <option value="14000000">₹1.40 Crore</option>
+        <option value="16000000">₹1.60 Crore</option>
+        <option value="18000000">₹1.80 Crore</option>
+        <option value="20000000">₹2 Crore</option>
+        <option value="23000000">₹2.30 Crore</option>
+        <option value="26000000">₹2.60 Crore</option>
+        <option value="29000000">₹2.90 Crore</option>
+        <option value="32000000">₹3.20 Crore</option>
+        <option value="35000000">₹3.50 Crore</option>
+        <option value="38000000">₹3.80 Crore</option>
+        <option value="41000000">₹4.10 Crore</option>
+        <option value="44000000">₹4.40 Crore</option>
+        <option value="47000000">₹4.70 Crore</option>
+        <option value="50000000">₹5 Crore</option>
+    </optgroup>
+</select>
+
 </div>
 
 
@@ -1341,7 +1363,7 @@ include("config.php");
             <div class="col-12 col-sm-6 col-md-3">
                 <a href="pune.php" class="city-link">
                     <div class="cities">
-                        <img src="images/cities/Pune.png" alt="Ready to Move">
+                        <img src="images/cities/pune.png" alt="Ready to Move">
                         <div class="cities-overlay">Pune</div>
                     </div>
                 </a>

@@ -373,7 +373,7 @@ include("config.php");
 
 .banner {
     position: relative;
-    height: 350px;
+    height: 250px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -465,7 +465,7 @@ include("config.php");
 <!-- banner -->
 <section id="banner-main">
     <div class="banner">
-        <img src="images/banner/pune.png" alt="Banner" class="banner-img">
+        <img src="images/banner/pune.jpg" alt="Banner" class="banner-img">
         <!-- <div class="banner-content">
             <h2>Pune Projects List</h2>
             <p class="banner-bread">
