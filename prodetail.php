@@ -26,6 +26,15 @@ $similar_projects = [];
 while ($similar_row = mysqli_fetch_array($similar_query)) {
     $similar_projects[] = $similar_row;
 }
+
+
+$isShortlisted = false;
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    $checkQuery = mysqli_query($con, "SELECT * FROM user_wishlist WHERE user_id = $userId AND property_id = $id");
+    $isShortlisted = mysqli_num_rows($checkQuery) > 0;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -112,8 +121,9 @@ while ($similar_row = mysqli_fetch_array($similar_query)) {
     <h1 class="prodetail-heading">
             <?php echo htmlspecialchars($row['1']); ?>
             <span class="action-buttons">
-                <button id="compareButton" onclick="addToCompare()" class="icon-btn1">
-                    <i class="fa fa-heart"></i> Shortlist
+                <button id="shortlistButton" onclick="shortlistProperty(<?php echo $id; ?>)" class="icon-btn1">
+                    <i class="fa fa-heart" <?php echo $isShortlisted ? 'style="color:red;"' : ''; ?>></i> 
+                    <?php echo $isShortlisted ? 'Shortlisted' : 'Shortlist'; ?>
                 </button>
                 <button id="shareButton" onclick="copyShareUrl()" class="icon-btn1">
                     <i class="fa fa-share"></i> Share
@@ -433,6 +443,47 @@ while ($similar_row = mysqli_fetch_array($similar_query)) {
         },
         grabCursor: true,
     });
+</script>
+
+
+
+<script>
+function shortlistProperty(pid) {
+    <?php if(isset($_SESSION['user_id'])): ?>
+        const isCurrentlyShortlisted = <?php echo $isShortlisted ? 'true' : 'false'; ?>;
+        const action = isCurrentlyShortlisted ? 'remove' : 'shortlist';
+        
+        fetch('shortlist_handler.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'action=' + action + '&pid=' + pid
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                const button = document.getElementById('shortlistButton');
+                if (action === 'shortlist') {
+                    button.innerHTML = '<i class="fa fa-heart" style="color:red;"></i> Shortlisted';
+                    alert('Property added to your wishlist!');
+                } else {
+                    button.innerHTML = '<i class="fa fa-heart"></i> Shortlist';
+                    alert('Property removed from your wishlist!');
+                }
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating your wishlist.');
+        });
+    <?php else: ?>
+        // User not logged in - redirect to login
+        window.location.href = 'login.php?redirect=' + encodeURIComponent(window.location.href);
+    <?php endif; ?>
+}
 </script>
 
 </body>
