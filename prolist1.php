@@ -3,68 +3,91 @@ session_start();
 include("config.php");
 
 // Get search parameters
-$city = $_GET['city'] ?? '';
-$location = $_GET['location'] ?? '';
-$projectType = $_GET['project_type'] ?? '';
-$projectSubtype = $_GET['project_subtype'] ?? '';
-$budget = $_GET['budget'] ?? '';
+$city = isset($_GET['city']) ? trim($_GET['city']) : '';
+$location = isset($_GET['location']) ? trim($_GET['location']) : '';
+$projectType = isset($_GET['project_type']) ? trim($_GET['project_type']) : '';
+$projectSubtype = isset($_GET['project_subtype']) ? trim($_GET['project_subtype']) : '';
+$budget = isset($_GET['budget']) ? (int)$_GET['budget'] : 0;
 
-// Budget ranges (in lakhs)
-$budgetRanges = [
-    1 => [5000000, 10000000],  // 50 lakh to 1 cr
-    2 => [10000000, 20000000], // 1 cr to 2 cr
-    3 => [20000000, 30000000], // 2 cr to 3 cr
-    4 => [30000000, 40000000], // 3 cr to 4 cr
-    5 => [40000000, 50000000], // 4 cr to 5 cr
-    6 => [50000000, 100000000], // 5 cr to 10 cr
-    7 => [100000000, 200000000], // 10 cr to 20 cr
-    8 => [200000000, 300000000], // 20 cr to 30 cr
-    9 => [300000000, 500000000] // 30 cr to 50 cr
-];
-
-// Prepare the SQL query based on project type and budget range
+// Initialize variables
 $query = "";
-$minPrice = $maxPrice = null;
+$conditions = array();
+$params = array();
+$paramTypes = "";
 
-if ($budget) {
-    $minPrice = $budgetRanges[$budget][0];
-    $maxPrice = $budgetRanges[$budget][1];
-}
-
+// Determine which table to query based on project type
+$tables = array();
 if ($projectType === "residential") {
-    $query = "SELECT * FROM residential_projects 
-              WHERE city = ? 
-              AND project_location = ?
-              AND JSON_CONTAINS(unit_details, JSON_OBJECT('name', ?), '$')
-              AND price BETWEEN ? AND ?";
+    $tables = array("residential_projects");
 } elseif ($projectType === "commercial") {
-    $query = "SELECT * FROM commercial_projects 
-              WHERE city = ? 
-              AND project_location = ?
-              AND typology = ? 
-              AND price BETWEEN ? AND ?";
+    $tables = array("commercial_projects");
 } elseif ($projectType === "plotting") {
-    $query = "SELECT * FROM plotting_projects 
-              WHERE city = ? 
-              AND project_location = ?
-              AND type = ? 
-              AND price BETWEEN ? AND ?";
-}
-
-$stmt = $con->prepare($query);
-
-// Bind parameters
-if ($projectType === "residential") {
-    $stmt->bind_param("sssii", $city, $location, $projectSubtype, $minPrice, $maxPrice);
+    $tables = array("plotting_projects");
 } else {
-    $stmt->bind_param("sssii", $city, $location, $projectSubtype, $minPrice, $maxPrice);
+    // If no project type selected, search all tables
+    $tables = array("residential_projects", "commercial_projects", "plotting_projects");
 }
 
-// Execute the query and fetch results
-$stmt->execute();
-$result = $stmt->get_result();
-?>
+// Build conditions based on provided parameters
+if (!empty($city)) {
+    $conditions[] = "city = ?";
+    $params[] = $city;
+    $paramTypes .= "s";
+}
 
+if (!empty($location)) {
+    $conditions[] = "project_location = ?";
+    $params[] = $location;
+    $paramTypes .= "s";
+}
+
+if (!empty($projectSubtype) && !empty($projectType)) {
+    if ($projectType === "residential") {
+        $conditions[] = "JSON_CONTAINS(unit_details, JSON_OBJECT('name', ?), '$')";
+    } elseif ($projectType === "commercial") {
+        $conditions[] = "typology = ?";
+    } else {
+        $conditions[] = "type = ?";
+    }
+    $params[] = $projectSubtype;
+    $paramTypes .= "s";
+}
+
+if (!empty($budget)) {
+    $conditions[] = "price <= ?";
+    $params[] = $budget;
+    $paramTypes .= "i";
+}
+
+// Prepare to collect all results
+$allResults = array();
+
+foreach ($tables as $table) {
+    // Build the query for this table
+    $tableQuery = "SELECT *, '$table' as source_table FROM $table";
+    
+    if (!empty($conditions)) {
+        $tableQuery .= " WHERE " . implode(" AND ", $conditions);
+    }
+    
+    // Prepare and execute the query
+    $stmt = $con->prepare($tableQuery);
+    
+    if (!empty($params)) {
+        $stmt->bind_param($paramTypes, ...$params);
+    }
+    
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
+        $row['project_type'] = str_replace('_projects', '', $table);
+        $allResults[] = $row;
+    }
+    
+    $stmt->close();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +95,7 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Listings</title>
-    <link rel="stylesheet" href="css/prolist.css"> <!-- Link to CSS file -->
+    <link rel="stylesheet" href="css/prolist.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Lexend&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
@@ -98,22 +121,23 @@ $result = $stmt->get_result();
         <div class="left-section">
             <div class="row">
             <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
+                if (!empty($allResults)) {
+                    foreach ($allResults as $row) {
                         $imagePath = "admin/property/" . $row['image1'];
                         $projectTitle = htmlspecialchars($row['project_title']);
                         $projectLocation = htmlspecialchars($row['project_location']);
+                        $currentType = $row['project_type'];
                         
                         // Additional details based on project type
                         $TotalTowers = $row['total_towers'] ?? "N/A";
                         $projectArea = $row['project_area'] ?? "N/A";
                         $TotalUnits = $row['total_units'] ?? "N/A";
-                        $projectPrice = $row['price'] ?? "N/A";
+                        $projectPrice = isset($row['price']) ? '₹' . number_format($row['price'] / 100000, 2) . ' Lakhs' : "N/A";
                         $projectTypology = $row['typology'] ?? "N/A";
                         $plotSize = $row['plot_size'] ?? "N/A";
 
                         // Display card based on project type
-                        if ($projectType == "residential") { ?>
+                        if ($currentType == "residential") { ?>
                             <div class="col-md-6 col-sm-10">
                                 <div class="property-card residential-card">
                                     <img src="<?php echo $imagePath; ?>" alt="Residential Property">
@@ -126,18 +150,18 @@ $result = $stmt->get_result();
                                             <span class="land-area"><i class="fa-solid fa-building"></i> <?php echo $TotalTowers; ?> Towers</span>
                                         </div>
                                         <div class="property-meta">
+                                            <span class="price"><i class="fas fa-rupee-sign"></i> <?php echo $projectPrice; ?></span>
                                             <span class="total-units">Total Units: <?php echo $TotalUnits; ?></span>
                                         </div>
                                         <div class="button-container">
-                                            <a href="Prodetail.php?pid=<?php echo $row['pid']; ?>" class="view-more-btn">Know More</a>
+                                            <a href="Prodetail.php?pid=<?php echo $row['pid']; ?>&type=residential" class="view-more-btn">Know More</a>
                                             <a href="https://wa.me/1234567890" target="_blank" class="btn-icon whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
                                             <a href="tel:+1234567890" class="btn-icon call-btn"><i class="fas fa-phone"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <?php } elseif ($projectType == "commercial") { ?>
-                            <!-- Commercial Project Card Layout -->
+                        <?php } elseif ($currentType == "commercial") { ?>
                             <div class="col-md-6 col-sm-10">
                                 <div class="property-card commercial-card">
                                     <img src="<?php echo $imagePath; ?>" alt="Commercial Property">
@@ -145,18 +169,15 @@ $result = $stmt->get_result();
                                     <div class="property-info">
                                         <h3><?php echo $projectTitle; ?></h3>
                                         <div class="property-meta">
-                                            <span class="location card-location"><i class="fa-solid fa-indian-rupee-sign" style="color: #a8894d;"></i> <?php echo $projectPrice;?></span>
-                                            <span class="location card-location"><i class="fas fa-map-marker-alt"></i> <?php echo $projectLocation;?></span>
+                                            <span class="location card-location"><i class="fa-solid fa-indian-rupee-sign" style="color: #a8894d;"></i> <?php echo $projectPrice; ?></span>
+                                            <span class="location card-location"><i class="fas fa-map-marker-alt"></i> <?php echo $projectLocation; ?></span>
                                             <span class="land-area card-location"><i class="fas fa-vector-square"></i> <?php echo $projectArea; ?></span>
-
-                                            
                                         </div>
                                         <div class="property-meta">
-                                            <span class="total-units card-location1">Typology : <?php echo $projectTypology; ?></span>
-                                            
+                                            <span class="total-units card-location1">Typology: <?php echo $projectTypology; ?></span>
                                         </div>    
                                         <div class="button-container">
-                                            <a href="Prodetail.php?pid=<?php echo $row['pid']; ?>" class="view-more-btn">Know More</a>
+                                            <a href="Prodetail.php?pid=<?php echo $row['pid']; ?>&type=commercial" class="view-more-btn">Know More</a>
                                             <a href="https://wa.me/1234567890" target="_blank" class="btn-icon whatsapp-btn">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
@@ -166,24 +187,23 @@ $result = $stmt->get_result();
                                         </div>
                                     </div>
                                 </div>
-                            </div>                        <?php } elseif ($projectType == "plotting") { ?>
-                            <!-- Industrial Project Card Layout -->
-                            <<div class="col-md-6 col-sm-10">
+                            </div>
+                        <?php } elseif ($currentType == "plotting") { ?>
+                            <div class="col-md-6 col-sm-10">
                                 <div class="property-card industrial-card">
                                     <img src="<?php echo $imagePath; ?>" alt="Industrial Property">
                                     <div class="property-info">
                                         <h3><?php echo $projectTitle; ?></h3>
                                         <div class="property-meta">
-                                            <span class="location card-location"><i class="fa-solid fa-indian-rupee-sign" style="color: #a8894d;"></i> <?php echo $projectPrice;?></span>
-                                            <span class="location card-location"><i class="fas fa-map-marker-alt"></i> <?php echo $projectLocation;?></span>
+                                            <span class="location card-location"><i class="fa-solid fa-indian-rupee-sign" style="color: #a8894d;"></i> <?php echo $projectPrice; ?></span>
+                                            <span class="location card-location"><i class="fas fa-map-marker-alt"></i> <?php echo $projectLocation; ?></span>
                                             <span class="land-area card-location"><i class="fas fa-vector-square"></i> <?php echo $plotSize; ?></span>
                                         </div>
                                         <div class="property-meta">
-                                            <span class="total-units card-location1">Land Area : <?php echo $projectArea; ?></span>
-                                            
+                                            <span class="total-units card-location1">Land Area: <?php echo $projectArea; ?></span>
                                         </div> 
                                         <div class="button-container">
-                                            <a href="plotdetail.php?pid=<?php echo $row['id']; ?>" class="view-more-btn">Know More</a>
+                                            <a href="plotdetail.php?pid=<?php echo $row['id']; ?>&type=plotting" class="view-more-btn">Know More</a>
                                             <a href="https://wa.me/1234567890" target="_blank" class="btn-icon whatsapp-btn">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
@@ -197,9 +217,12 @@ $result = $stmt->get_result();
                         <?php }
                     }
                 } else {
-                    echo "<p>No projects found matching your criteria.</p>";
+                    echo '<div class="col-12"><p class="no-results">No projects found matching your criteria. Please try different search parameters.</p></div>';
                 }
-                $con->close();
+                
+                if ($con) {
+                    $con->close();
+                }
             ?>
             </div>
         </div>
@@ -229,7 +252,7 @@ $result = $stmt->get_result();
         <div class="hero-section">
             <div class="overlay">
                 <h2>Your Dream Home Awaits</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Discover the perfect property that matches your lifestyle and budget.</p>
                 <a href="#contact" class="btn">Contact Us</a>
             </div>
         </div>

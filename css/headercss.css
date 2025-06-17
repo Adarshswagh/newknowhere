@@ -1,488 +1,303 @@
-/* Basic Navbar Styling */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #050F17;
+    padding-top: 80px; /* To compensate for sticky header */
+}
+
+/* Sticky Header */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #050F17;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar container */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #050f17;
+    background-color: #050F17;
+    height: 80px;
+    width: 100%;
 }
 
 .navbar-container {
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
 }
 
+/* Logo styling */
 .navbar-logo img {
-    max-width: 120px;
+    max-width: 150px;
+    height: auto;
 }
 
+/* Navbar menu */
 .navbar-menu {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 0px;
+    align-items: center;
 }
 
 .navbar-menu li {
     position: relative;
 }
 
+/* Navbar links */
 .navbar-menu a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
 }
 
-/* Dropdown Menu Styling */
+.navbar-menu a:hover {
+    color: #A8894D;
+}
+
+/* Dropdown menu */
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
-    list-style: none;
+    background-color: #050F17;
     padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
+    z-index: 10;
+    min-width: 200px;
 }
 
 .dropdown-menu li {
-    margin: 0;
-    padding: 5px 15px;
+    padding: 0;
 }
 
-.dropdown-menu a {
-    color: #fff;
+.dropdown-menu-a {
+    color: white;
+    font-size: 14px;
     text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
 }
 
-/* Responsive Navbar for Mobile */
+.dropdown-menu-a:hover {
+    color: #A8894D;
+    background-color: rgba(168, 137, 77, 0.1);
+}
+
+/* Sub-Dropdown Menu */
+.sub-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #050F17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 11;
+    min-width: 200px;
+}
+
+/* Button Styles */
+.navbar-wishlist, .navbar-login {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+/* Wishlist button */
+.navbar-wishlist {
+    background-color: #A8894D;
+    color: #050F17 !important;
+    border: 1px solid #A8894D;
+}
+
+.navbar-wishlist:hover {
+    background-color: transparent;
+    color: #A8894D !important;
+}
+
+/* Login button */
+.navbar-login {
+    background-color: #2a3b47;
+    color: white !important;
+    border: 1px solid #2a3b47;
+}
+
+.navbar-login:hover {
+    background-color: #3a4b57;
+    color: white !important;
+}
+
+/* Logged in user button */
+.navbar-login.logged-in {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.navbar-login.logged-in:hover {
+    background-color: #45a049;
+}
+
+/* Toggle Button */
 .navbar-toggle {
     display: none;
-    flex-direction: column;
+    background: none;
+    border: none;
     cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
 }
 
-.navbar-toggle span {
+.navbar-toggle .bar {
+    display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: white;
     margin: 5px 0;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
+.navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu */
 @media (max-width: 768px) {
-    /* Hide regular navbar menu */
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
+    body {
+        padding-top: 70px;
+    }
+    
+    .navbar {
+        height: 70px;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+    
+    .navbar-menu-container {
+        position: fixed;
+        top: 70px;
         left: 0;
         width: 100%;
-        background-color: #050f17;
+        background-color: #050F17;
         padding: 20px;
-        z-index: 1;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
     }
-
-    /* Show toggle button */
-    .navbar-toggle {
-        display: flex;
+    
+    .navbar-menu-container.show {
+        transform: translateX(0);
     }
-
-    /* Show menu when toggled */
-    .navbar-menu.active {
-        display: flex;
+    
+    .navbar-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
-
-    /* Style adjustments for mobile dropdown */
+    
     .dropdown-menu {
         position: static;
+        display: none;
+        width: 100%;
         box-shadow: none;
-        background-color: transparent;
+        margin-top: 10px;
+        margin-left: 20px;
         padding: 0;
     }
-
-    .dropdown-menu a {
+    
+    .sub-dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        margin-top: 10px;
+        margin-left: 20px;
+        padding: 0;
+    }
+    
+    .dropdown-menu.show,
+    .sub-dropdown-menu.show {
+        display: block;
+    }
+    
+    .navbar-wishlist, .navbar-login {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+        text-align: center;
+    }
+    
+    /* Make sure these buttons stand out in mobile menu */
+    .navbar-menu > li:last-child,
+    .navbar-menu > li:nth-last-child(2) {
+        border-bottom: none;
         padding: 10px 0;
-        color: #fff;
+    }
+
+    .dropdown-sub{
+        color:white
+    }
+
+    /* Add this to your existing CSS */
+    .dropdown:hover > .dropdown-menu,
+    .dropdown-sub:hover > .sub-dropdown-menu {
+        display: block;
+    }
+
+    /* For mobile - show when has .show class */
+    .dropdown-menu.show,
+    .sub-dropdown-menu.show {
+        display: block !important;
+    }
+
+    /* Ensure dropdowns stay visible when active */
+    .dropdown.active > .dropdown-menu,
+    .dropdown-sub.active > .sub-dropdown-menu {
+        display: block;
+    }
+
+    /* Fix z-index issues */
+    .dropdown-menu {
+        z-index: 1000;
+    }
+    .sub-dropdown-menu {
+        z-index: 1001;
     }
 }
 
- /* General body styles */
-        body {
-            margin: 0;
-            font-family: 'Lexend', sans-serif;
-            background-color: #050F17;
-            padding-top: 80px; /* To compensate for sticky header */
-        }
-
-        /* Sticky Header */
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background-color: #050F17;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Navbar container */
-        .navbar {
-            background-color: #050F17;
-            height: 80px;
-            width: 100%;
-        }
-
-        .navbar-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1450px;
-            margin: 0 auto;
-            width: 100%;
-            height: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        /* Logo styling */
-        .navbar-logo img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        /* Navbar menu */
-        .navbar-menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 0px;
-            align-items: center;
-        }
-
-        .navbar-menu li {
-            position: relative;
-        }
-
-        /* Navbar links */
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 10px 20px;
-            display: block;
-        }
-
-        .navbar-menu a:hover {
-            color: #A8894D;
-        }
-
-        /* Dropdown menu */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #050F17;
-            padding: 10px 0;
-            list-style: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            z-index: 10;
-            min-width: 200px;
-        }
-
-        .dropdown-menu li {
-            padding: 0;
-        }
-
-        .dropdown-menu-a {
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-            white-space: nowrap;
-        }
-
-        .dropdown-menu-a:hover {
-            color: #A8894D;
-            background-color: rgba(168, 137, 77, 0.1);
-        }
-
-        /* Sub-Dropdown Menu */
-        .sub-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: #050F17;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            z-index: 11;
-            min-width: 200px;
-        }
-
-        /* Dropdown arrows */
-        .dropdown-arrow {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-left: 5px;
-            vertical-align: middle;
-            border-top: 5px solid;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .dropdown.active .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Compare button */
-        .navbar-compare {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 25px;
-            background-color: #A8894D;
-            color: #050F17;
-            border-radius: 4px;
-        }
-
-        .navbar-compare:hover {
-            background-color: white;
-        }
-
-        /* Profile button */
-        .profile-btn {
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 25px;
-            background-color: #2a3b47;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            border: none;
-            font-family: 'Lexend', sans-serif;
-        }
-
-        .profile-btn:hover {
-            background-color: #3a4b57;
-        }
-
-        /* Profile dropdown */
-        .profile-dropdown {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background-color: #050F17;
-            padding: 10px 0;
-            list-style: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            z-index: 10;
-            min-width: 180px;
-        }
-
-        .profile-dropdown.show {
-            display: block;
-        }
-
-        .profile-dropdown a {
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-            white-space: nowrap;
-        }
-
-        .profile-dropdown a:hover {
-            color: #A8894D;
-            background-color: rgba(168, 137, 77, 0.1);
-        }
-
-        /* Mobile toggle button */
-        .navbar-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            transition: all 0.3s;
-        }
-
-        /* Active state for toggle button */
-        .navbar-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-
-        .navbar-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .navbar-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        /* Profile section in mobile menu */
-        .mobile-profile-section {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-profile-btn {
-            display: block;
-            width: 100%;
-            padding: 12px 20px;
-            background-color: #2a3b47;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-
-        .mobile-profile-dropdown {
-            display: none;
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
-        }
-
-        .mobile-profile-dropdown.show {
-            display: block;
-        }
-
-        .mobile-profile-dropdown a {
-            display: block;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .mobile-profile-dropdown a:hover {
-            color: #A8894D;
-            background-color: rgba(168, 137, 77, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            .navbar {
-                height: 70px;
-            }
-
-            .navbar-logo img {
-                max-width: 120px;
-            }
-
-            .navbar-menu a {
-                padding: 10px 15px;
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-toggle {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .navbar-menu-container {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: #050F17;
-                padding: 20px;
-                box-sizing: border-box;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-                height: calc(100vh - 70px);
-                overflow-y: auto;
-            }
-
-            .navbar-menu-container.show {
-                transform: translateX(0);
-            }
-
-            .navbar-menu {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                margin-top: 10px;
-                margin-left: 20px;
-                padding: 0;
-            }
-
-            .sub-dropdown-menu {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                margin-top: 10px;
-                margin-left: 20px;
-                padding: 0;
-            }
-
-            .dropdown-menu.show,
-            .sub-dropdown-menu.show {
-                display: block;
-            }
-
-            .dropdown-arrow {
-                float: right;
-                margin-top: 8px;
-            }
-
-            .profile-btn-container {
-                display: none;
-            }
-
-            .mobile-profile-section {
-                display: block;
-            }
-        }

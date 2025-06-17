@@ -14,19 +14,23 @@ $query = mysqli_query($con, "SELECT * FROM commercial_projects WHERE pid='$id'")
 if(mysqli_num_rows($query) > 0) {
     // Data found, fetch the row
     $row = mysqli_fetch_array($query);
-    
-   
-    // You can now use $row and $unit_details as needed
 } else {
     // No data found in residential_projects
     echo "No project found with the given pid.";
     exit;
 }
 
+// Check if property is shortlisted
+$isShortlisted = false;
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    $checkQuery = mysqli_query($con, "SELECT * FROM user_wishlist WHERE user_id = $userId AND property_id = $id");
+    $isShortlisted = mysqli_num_rows($checkQuery) > 0;
+}
+
 // Fetch similar projects based on location
 $location = $row['3']; // Assuming '3' is the index for location in your database
-$similar_query = mysqli_query($con, "SELECT * FROM commercial_projects WHERE project_location='$location' AND pid != '$
-id' LIMIT 5"); // Adjust the query as needed
+$similar_query = mysqli_query($con, "SELECT * FROM commercial_projects WHERE project_location='$location' AND pid != '$id' LIMIT 5"); // Adjust the query as needed
 
 $similar_projects = [];
 while ($similar_row = mysqli_fetch_array($similar_query)) {
@@ -653,27 +657,28 @@ header {
             </div>
 
             <script>
-  let slideIndex = 0;
-  function showSlides() {
-    let slides = document.querySelectorAll(".mySlides");
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; // Hide all images
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; } // Reset to first slide
-    slides[slideIndex - 1].style.display = "block"; // Show current slide
-    setTimeout(showSlides, 5000); // Change image every 2 seconds
-  }
+                let slideIndex = 0;
+                function showSlides() {
+                    let slides = document.querySelectorAll(".mySlides");
+                    for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; // Hide all images
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1; } // Reset to first slide
+                    slides[slideIndex - 1].style.display = "block"; // Show current slide
+                    setTimeout(showSlides, 5000); // Change image every 2 seconds
+                }
 
-  document.addEventListener("DOMContentLoaded", showSlides); // Start when page loads
-</script>
+                document.addEventListener("DOMContentLoaded", showSlides); // Start when page loads
+            </script>
 
 
             <h1 class="prodetail-heading">
                 <?php echo htmlspecialchars($row['1']); ?>
                 <span class="action-buttons">
-                    <button id="compareButton" onclick="addToCompare()" class="icon-btn1">
-                        <i class="fa fa-heart"></i> Shortlist
+                    <button id="shortlistButton" onclick="shortlistProperty(<?php echo $id; ?>)" class="icon-btn1">
+                        <i class="fa fa-heart" <?php echo $isShortlisted ? 'style="color:red;"' : ''; ?>></i> 
+                        <?php echo $isShortlisted ? 'Shortlisted' : 'Shortlist'; ?>
                     </button>
                     <button id="shareButton" onclick="copyShareUrl()" class="icon-btn1">
                         <i class="fa fa-share"></i> Share
@@ -991,102 +996,88 @@ header {
 </script>
 
 <script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-    // Function to handle the "Like/Compare" button click
-   // Function to handle the "Like/Compare" button click
-  
-    function addToCompare() {
-        const propertyId = "<?php echo htmlspecialchars($id); ?>";
-        const propertyName = "<?php echo htmlspecialchars($row['1']); ?>";
-        const propertyLocation = "<?php echo htmlspecialchars($row['3']); ?>";
-        const propertyTotalUnits = "<?php echo htmlspecialchars($row['6']); ?>";
-        const propertyTotalTowers = "<?php echo htmlspecialchars($row['5']); ?>";
-        const propertyArea = "<?php echo htmlspecialchars($row['4']); ?>";
-        const propertyPossession = "<?php echo htmlspecialchars($row['7']); ?>";
-        const propertyDeveloper = "<?php echo htmlspecialchars($row['21']); ?>";
-        const propertyPsf = "<?php echo htmlspecialchars($row['20']); ?>";
-        const propertyTotalFloor = "<?php echo htmlspecialchars($row['18']); ?>";
-        const propertyStatus = "<?php echo htmlspecialchars($row['14']); ?>";
-        const typologyDetails = <?php echo json_encode($unit_details); ?>;
-        const projectType = "Commercial";
-
-        let comparisonList = JSON.parse(localStorage.getItem("comparisonList")) || [];
-
-        if (comparisonList.length > 0 && comparisonList[0].type !== projectType) {
-            alert("You can only compare properties of the same type.");
-            return; // Prevent adding the property
-        }
-
-        const exists = comparisonList.some(item => item.id === propertyId);
-        if (exists) {
-            alert("Property already added to comparison list!");
-            return;
-        }
-
-        comparisonList.push({
-            id: propertyId,
-            name: propertyName,
-            location: propertyLocation,
-            totalUnits: propertyTotalUnits,
-            towers: propertyTotalTowers,
-            area: propertyArea,
-            possession: propertyPossession,
-            developer: propertyDeveloper,
-            psf: propertyPsf,
-            totalFloor: propertyTotalFloor,
-            status: propertyStatus,
-            typologyDetails: typologyDetails,
-            type: projectType
+function shortlistProperty(pid) {
+    <?php if(isset($_SESSION['user_id'])): ?>
+        const isCurrentlyShortlisted = <?php echo $isShortlisted ? 'true' : 'false'; ?>;
+        const action = isCurrentlyShortlisted ? 'remove' : 'shortlist';
+        const button = document.getElementById('shortlistButton');
+        
+        // Show loading state
+        button.disabled = true;
+        button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+        
+        fetch('shortlist_handler.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'action=' + action + '&pid=' + pid
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if(data.success) {
+                if (action === 'shortlist') {
+                    button.innerHTML = '<i class="fa fa-heart" style="color:red;"></i> Shortlisted';
+                    // Optional: Show a toast notification instead of alert
+                    showToast('Property added to your wishlist!');
+                } else {
+                    button.innerHTML = '<i class="fa fa-heart"></i> Shortlist';
+                    showToast('Property removed from your wishlist!');
+                }
+            } else {
+                showToast(data.message || 'Operation failed');
+                console.error('Error:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showToast('An error occurred. Please try again.');
+        })
+        .finally(() => {
+            button.disabled = false;
         });
+    <?php else: ?>
+        // User not logged in - redirect to login
+        window.location.href = 'login.php?redirect=' + encodeURIComponent(window.location.href);
+    <?php endif; ?>
+}
 
-        localStorage.setItem("comparisonList", JSON.stringify(comparisonList));
-        alert("Property added to comparison list.");
-    }
+// Helper function for showing notifications
+function showToast(message) {
+    // You can replace this with a proper toast notification library
+    const toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.backgroundColor = '#A8894D';
+    toast.style.color = 'white';
+    toast.style.padding = '10px 20px';
+    toast.style.borderRadius = '5px';
+    toast.style.zIndex = '10000';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        document.body.removeChild(toast);
+    }, 3000);
+}
 
-
-    // Function to show the popup
-    function showPopup(content) {
-        document.getElementById("popupContent").innerHTML = content;
-        document.getElementById("comparePopup").style.display = "block";
-    }
-
-    // Function to close the popup
-    function closePopup() {
-        document.getElementById("comparePopup").style.display = "none";
-    }
-
-
-
-
-    function copyShareUrl() {
-        const shareUrl = window.location.href; // Get the current page URL
-
-        // Create a temporary input element to copy the URL
-        const tempInput = document.createElement("input");
-        document.body.appendChild(tempInput);
-        tempInput.value = shareUrl;
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-
-        alert("Project URL copied to clipboard!");
-    }
-
+function copyShareUrl() {
+    const shareUrl = window.location.href;
+    const tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = shareUrl;
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert("Project URL copied to clipboard!");
+}
 </script>
-
 
 
 
